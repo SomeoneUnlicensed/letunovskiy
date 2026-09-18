@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Владимир Летуновский — full-stack разработчик</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+:root{
+  --bg:#fbf2e9; --ink:#5c152c; --muted:#8a5560; --rule:#e9d6c9;
+  --terracotta:#dc4c2c; --peach:#f49c74; --plum:#ae549c;
+  --display:"Anton",Impact,sans-serif; --sans:"Nunito",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--sans)}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:1.5rem}
+@media (min-width:64rem){.wrap{padding-inline:3rem}}
+a{color:var(--terracotta);text-decoration:none;border-bottom:2px solid var(--peach)}
+a:hover{color:var(--plum);border-color:var(--plum)}
+.nav{position:sticky;top:0;background:var(--bg);border-bottom:3px solid var(--ink);z-index:10}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:1rem}
+.nav .logo{font-family:var(--display);font-size:1.3rem;color:var(--terracotta);border:none;letter-spacing:.02em}
+.nav ul{list-style:none;display:flex;gap:1.5rem;margin:0;padding:0;font-weight:800;font-size:.85rem;text-transform:uppercase}
+.nav a{color:var(--ink);border:none}
+.nav a:hover{color:var(--terracotta)}
+.hero{padding-block:4.5rem 3.5rem;border-bottom:3px solid var(--ink);position:relative}
+.tag{display:inline-block;background:var(--plum);color:#fff;font-weight:800;font-size:.8rem;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.5rem;transform:rotate(-2deg)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,10vw,7rem);line-height:.92;letter-spacing:-.01em;margin:0 0 1.2rem;color:var(--terracotta);text-transform:uppercase}
+h1 span{color:var(--ink);display:block}
+.hero-sub{max-width:34rem;font-size:1.25rem;font-weight:600;color:var(--ink);margin:0 0 2rem}
+.hero-links{display:flex;gap:1.5rem;font-weight:800;font-size:.95rem;flex-wrap:wrap}
+section{border-bottom:3px solid var(--ink)}
+.row{padding-block:3.25rem;display:grid;gap:1.25rem}
+@media (min-width:60rem){.row{grid-template-columns:200px 1fr;gap:2.5rem}}
+.label{font-family:var(--display);font-size:1.1rem;color:var(--plum);text-transform:uppercase;margin:0}
+.body{max-width:44rem}
+.body p{margin:0 0 1.1em}
+.card{background:var(--peach);border:3px solid var(--ink);border-radius:16px;padding:1.5rem;font-weight:700;line-height:1.7;transform:rotate(1deg)}
+.tiers{display:grid;gap:1.5rem}
+@media (min-width:48rem){.tiers{grid-template-columns:repeat(3,1fr)}}
+.tier{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:1.25rem}
+.tier:nth-child(2){background:var(--peach)}
+.tier:nth-child(3){background:#f0d9e6}
+.tier h3{font-family:var(--display);font-size:1rem;color:var(--terracotta);margin:0 0 .3rem;text-transform:uppercase}
+.gloss{font-size:.9rem;color:var(--muted);margin:0 0 .8rem;font-style:italic}
+.stack{font-weight:700;font-size:.92rem;line-height:1.9}
+.services{display:grid;gap:1rem}
+@media (min-width:48rem){.services{grid-template-columns:repeat(2,1fr)}}
+.service{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:1.25rem}
+.service .n{font-family:var(--display);color:var(--plum);font-size:1.5rem}
+.service h4{margin:.2rem 0;font-weight:800}
+.service p{margin:0;color:var(--muted);font-size:.92rem;font-weight:600}
+footer{padding-block:3.5rem}
+.cta{font-family:var(--display);font-size:clamp(2rem,5vw,3.2rem);color:var(--terracotta);max-width:20ch;margin:0 0 1.5rem;text-transform:uppercase;line-height:1}
+.foot-links{font-weight:800;display:flex;flex-direction:column;gap:.5rem;font-size:1rem}
+.copyright{font-size:.85rem;color:var(--muted);margin-top:3rem;font-weight:700}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap">
+  <a class="logo" href="#top">ВЛ</a>
+  <ul><li><a href="#about">обо мне</a></li><li><a href="#stack">стек</a></li><li><a href="#services">услуги</a></li><li><a href="#contact">контакты</a></li></ul>
+</div></nav>
+<div class="wrap">
+  <header class="hero" id="top">
+    <span class="tag">14 лет · открыт к проектам</span>
+    <h1>Владимир<span>Летуновский</span></h1>
+    <p class="hero-sub">Full-stack разработчик. Go, Python, TypeScript, React — собираю продукты от макета до продакшена, с огоньком.</p>
+    <div class="hero-links"><a href="mailto:letunovskiu2011@yandex.ru">letunovskiu2011@yandex.ru</a><a href="https://github.com/SomeoneUnlicensed">github.com/SomeoneUnlicensed</a></div>
+  </header>
+
+  <section id="about"><div class="row">
+    <p class="label">обо мне</p>
+    <div class="body">
+      <p>Программирую без остановки: новый язык или фреймворк осваиваю за одну-две недели. Уверенно работаю на бэкенде (Go, Rust, немного Ruby on Rails, PHP, Kotlin), собираю интерфейсы на React, проектирую в Figma.</p>
+      <p>Активно использую AI-инструменты в разработке — Claude Code, Codex — это часть процесса, а не замена пониманию.</p>
+      <div class="card">Коротко: full-stack · Go/Python/TS · AI-driven разработка · бэкенд, фронтенд, мобилка, дизайн</div>
+    </div>
+  </div></section>
+
+  <section id="stack"><div class="row">
+    <p class="label">стек</p>
+    <div class="body tiers">
+      <div class="tier"><h3>ежедневно</h3><p class="gloss">здесь я живу</p><p class="stack">Go · Python · TypeScript · JavaScript · HTML5 · CSS3 · React · Git · PostgreSQL · MySQL · Figma</p></div>
+      <div class="tier"><h3>есть опыт</h3><p class="gloss">делал реальные задачи</p><p class="stack">Rust · Node.js · Django · PHP · Docker · Nginx · Telegram-боты · парсинг · SVG · Three.js · SQLite · Redis · API Яндекс Карт · API VK · 1С-Битрикс · SEO</p></div>
+      <div class="tier"><h3>знакомлюсь</h3><p class="gloss">опыта пока немного</p><p class="stack">Kotlin · Ruby · Ruby on Rails · C++ · Angular · MongoDB · Apache · XML · Unreal Engine · Stable Diffusion · нагрузочное и security-тестирование</p></div>
+    </div>
+  </div></section>
+
+  <section id="services"><div class="row">
+    <p class="label">услуги</p>
+    <div class="body services">
+      <div class="service"><span class="n">01</span><h4>Бэкенд и API</h4><p>Сервисы на Go и Python, PostgreSQL/MySQL, интеграции.</p></div>
+      <div class="service"><span class="n">02</span><h4>Фронтенд</h4><p>Интерфейсы на React, от макета до продакшена.</p></div>
+      <div class="service"><span class="n">03</span><h4>Боты и автоматизация</h4><p>Telegram-боты, парсинг, скрипты.</p></div>
+      <div class="service"><span class="n">04</span><h4>Небольшие проекты</h4><p>Лендинги, визитки, e-mail-вёрстка.</p></div>
+    </div>
+  </div></section>
+
+  <footer id="contact">
+    <p class="label" style="margin-bottom:.75rem;font-size:.85rem">контакты</p>
+    <p class="cta">Есть задача — пишите!</p>
+    <div class="foot-links"><a href="mailto:letunovskiu2011@yandex.ru">letunovskiu2011@yandex.ru</a><a href="https://github.com/SomeoneUnlicensed">github.com/SomeoneUnlicensed</a></div>
+    <p class="copyright">© Владимир Летуновский</p>
+  </footer>
+</div>
+</body>
+</html>
