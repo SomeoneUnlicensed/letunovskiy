@@ -7,48 +7,55 @@
 <meta name="description" content="Владимир Летуновский — full-stack разработчик. Go, Python, TypeScript, React.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;900&display=swap">
 <style>
 :root{
-  --bg:#f2f2f0; --ink:#111111; --muted:#7c7c7c; --rule:#c9c9c5; --lime:#cbf35b;
+  --bg:#f5f5f5; --bg2:#e6e6e3; --ink:#111111; --muted:#5f5f5f; --rule:#d6d6d2; --lime:#cbf35b;
   --sans:"Inter Tight",Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){
-  :root{ --bg:#151513; --ink:#eeeeec; --muted:#8a8a86; --rule:#2c2c29; }
+  :root{ --bg:#141412; --bg2:#1c1c19; --ink:#efefec; --muted:#9a9a94; --rule:#2c2c28; }
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--sans)}
 a{color:var(--ink)}
 .side{padding-inline:clamp(1.25rem,5vw,3rem)}
 
-.banner{background:var(--lime);color:#111;text-align:center;padding:.55rem 1rem;font-size:.82rem}
-.banner a{border-bottom:1px solid #111}
+.banner{background:var(--lime);color:#111;text-align:center;padding:.5rem 1rem;font-size:.85rem}
+.banner a{color:#111}
 
-.nav{border-bottom:1px solid var(--rule);padding-block:1rem}
-.nav-row{display:flex;justify-content:space-between;align-items:center;max-width:78rem;margin:0 auto}
-.nav-row a{text-decoration:none}
-.nav-links{display:flex;gap:1.5rem;font-size:.85rem;color:var(--muted)}
-.nav-links a{color:var(--muted)}
-.nav-links a:hover{color:var(--ink)}
+.nav{border-bottom:1px solid var(--rule);padding-block:1.1rem}
+.nav-row{display:flex;justify-content:space-between;align-items:center;max-width:90rem;margin:0 auto}
+.nav-row a{text-decoration:none;font-size:1.05rem;font-weight:500}
+.nav-links{display:flex;gap:1.5rem;font-size:.9rem}
+.nav-links a{color:var(--ink)}
 
-.hero{position:relative;padding:3.5rem 0 2.5rem;overflow:hidden;border-bottom:1px solid var(--rule)}
-.ghost{
-  position:absolute;top:2rem;left:0;right:0;text-align:right;
-  font-weight:800;font-size:clamp(3rem,14vw,9rem);line-height:.86;
-  color:var(--ink);opacity:.06;letter-spacing:-.02em;pointer-events:none;
+.hero{padding:2.5rem 0 0;overflow:hidden}
+.hero-sub{max-width:20rem;font-size:1.1rem;line-height:1.35}
+.hero-spacer{height:clamp(3rem,14vh,9rem)}
+.big-name{
+  margin:0;font-weight:900;letter-spacing:-.03em;line-height:.88;
+  white-space:nowrap;font-size:clamp(1.5rem,7vw,6.7rem);
   padding-inline:clamp(1.25rem,5vw,3rem);
 }
-.stack-name{position:relative;font-weight:800;letter-spacing:-.03em;line-height:.86;margin:0}
-.stack-name span{display:block;font-size:clamp(3.4rem,13vw,8.5rem);white-space:nowrap}
-.hero-sub{position:relative;max-width:28rem;margin-top:2rem;font-size:1rem;color:var(--muted)}
-.hero-sub b{color:var(--ink);font-weight:500}
+@media (max-width:40rem){
+  .big-name{white-space:normal;font-size:clamp(2.2rem,13vw,4rem)}
+}
 
-.band{background:#111;color:#f2f2f0;padding:3rem 0}
-.band p{max-width:52rem;margin:0 auto;font-size:clamp(1.05rem,2.4vw,1.4rem);line-height:1.5;font-weight:500}
-.band em{color:var(--lime);font-style:normal}
+.giant{background:var(--bg2);padding:3rem 0 2.5rem;overflow:hidden}
+.giant h2{
+  margin:0;text-transform:uppercase;font-weight:900;letter-spacing:-.01em;
+  line-height:.86;font-size:clamp(2.4rem,10.5vw,7.5rem);
+  padding-inline:clamp(1.25rem,5vw,3rem);
+}
+.giant .intro{
+  max-width:34rem;margin-top:2rem;font-size:1rem;color:var(--muted);
+  padding-inline:clamp(1.25rem,5vw,3rem);
+}
+.giant .intro b{color:var(--ink);font-weight:500}
 
 section.block{border-bottom:1px solid var(--rule);padding-block:3.5rem}
-.block .wrap{max-width:78rem;margin:0 auto}
+.block .wrap{max-width:90rem;margin:0 auto}
 .eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 1.5rem}
 
 .tiers{display:grid;gap:2rem;grid-template-columns:1fr}
@@ -70,17 +77,17 @@ section.block{border-bottom:1px solid var(--rule);padding-block:3.5rem}
 .grate .file:empty::before{content:"файл не добавлен";font-style:italic}
 
 footer{padding-block:3rem}
-.foot-row{max-width:78rem;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--muted)}
+.foot-row{max-width:90rem;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--muted)}
 .foot-row a{color:var(--ink)}
 </style>
 </head>
 <body>
 
-<div class="banner">Открыт к проектам. <a href="mailto:letunovskiu2011@yandex.ru">Написать →</a></div>
+<div class="banner">Открыт к проектам. <a href="mailto:letunovskiu2011@yandex.ru"><u>Написать</u></a>.</div>
 
 <header class="nav">
   <div class="nav-row side">
-    <a href="#top"><b>Владимир Летуновский</b></a>
+    <a href="#top">Владимир Летуновский</a>
     <nav class="nav-links">
       <a href="#stack">Стек</a>
       <a href="#experience">Опыт</a>
@@ -89,19 +96,16 @@ footer{padding-block:3rem}
   </div>
 </header>
 
-<section class="hero side" id="top">
-  <div class="ghost" aria-hidden="true">РАЗРАБОТЧИК</div>
-  <h1 class="stack-name">
-    <span>Владимир</span>
-    <span>Летунов-</span>
-    <span>ский</span>
-  </h1>
-  <p class="hero-sub"><b>Full-stack разработчик, <span id="age">14</span> лет.</b> Go, Python, TypeScript, React — от бэкенда до интерфейса.</p>
+<section class="hero" id="top">
+  <p class="hero-sub side">Full-stack разработчик<br><span id="age">14</span> лет, Россия.</p>
+  <div class="hero-spacer"></div>
+  <h1 class="big-name">Владимир Летуновский</h1>
 </section>
 
-<div class="band">
-  <p>Пишу код каждый день — не ради оценок, а ради результата, который <em>реально работает</em>.</p>
-</div>
+<section class="giant">
+  <h2>Полный<br>стек</h2>
+  <p class="intro"><b>Go, Python, TypeScript, React.</b> Собираю продукты от бэкенда до интерфейса — и уже с опытом реальных задач за плечами, а не только учебных.</p>
+</section>
 
 <section class="block" id="stack">
   <div class="wrap side">
