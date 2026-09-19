@@ -97,7 +97,7 @@ footer{border-top:1px solid var(--rule);padding-block:2.5rem}
 <section class="hero">
   <div class="blob" aria-hidden="true"></div>
   <div class="hero-top side">
-    <p>Собираю продукты <em>от кода до интерфейса</em>.<br>14 лет, full-stack.</p>
+    <p>Собираю продукты <em>от кода до интерфейса</em>.<br><span id="age">14</span> лет, full-stack — и уже с рабочими проектами за плечами.</p>
   </div>
   <div class="hero-name side">
     <div class="l1"><span class="first">Владимир</span></div>
@@ -106,12 +106,12 @@ footer{border-top:1px solid var(--rule);padding-block:2.5rem}
 </section>
 
 <section class="block side" id="services">
-  <p class="eyebrow">Чем занимаюсь</p>
+  <p class="eyebrow">Что я умею применить на практике</p>
   <div class="list">
-    <div class="list-row"><span class="name">Серверная часть</span><span class="desc">Go и Python, базы данных, интеграции с внешними сервисами</span></div>
-    <div class="list-row"><span class="name">Интерфейсы</span><span class="desc">React, адаптивная вёрстка, путь от макета до релиза</span></div>
-    <div class="list-row"><span class="name">Автоматизация</span><span class="desc">Боты, парсеры, скрипты для рутинных задач</span></div>
-    <div class="list-row"><span class="name">Дизайн</span><span class="desc">Figma, лендинги, вёрстка писем</span></div>
+    <div class="list-row"><span class="name">Серверная часть</span><span class="desc">Go и Python, базы данных, интеграции с внешними сервисами — то, что не падает под нагрузкой</span></div>
+    <div class="list-row"><span class="name">Интерфейсы</span><span class="desc">React, адаптивная вёрстка, путь от макета в Figma до боевого релиза</span></div>
+    <div class="list-row"><span class="name">Автоматизация</span><span class="desc">Боты, парсеры, скрипты — снимаю рутину с команды</span></div>
+    <div class="list-row"><span class="name">Дизайн</span><span class="desc">Figma, лендинги, вёрстка писем — довожу идею до вида, который не стыдно показать</span></div>
   </div>
 </section>
 
@@ -120,15 +120,20 @@ footer{border-top:1px solid var(--rule);padding-block:2.5rem}
   <div class="list">
     <div class="list-row"><span class="name name--serif">Студия Артемия Лебедева</span><span class="desc">опыт работы</span></div>
   </div>
+  <p class="eyebrow" style="margin-top:2.5rem">Волонтёрство</p>
+  <div class="list">
+    <div class="list-row"><span class="name">Беговое сообщество Физтех</span><span class="desc">волонтёрство</span></div>
+    <div class="list-row"><span class="name">Наставник для детей</span><span class="desc">волонтёрство</span></div>
+  </div>
 </section>
 
 <section class="block side" id="about">
   <p class="eyebrow">Кто я</p>
   <div class="skills">
     <div class="bio">
-      <h2>Мне 14, и я собираю вещи, которые реально работают — не учебные примеры, а рабочий код.</h2>
+      <h2>Мне <span id="age2">14</span>, и я уже сдаю работу, а не домашние задания — код проверен на реальных задачах, а не только на учебных примерах.</h2>
       <hr>
-      <p style="color:var(--muted);font-size:.95rem;line-height:1.6;max-width:34ch;margin:0">Новый инструмент осваиваю за неделю-две — читаю документацию до конца, а не до первого рабочего примера. В работе использую Claude Code и Codex, но объяснить могу каждую строчку сам. Эту страницу собрал руками, на чистых HTML и CSS.</p>
+      <p style="color:var(--muted);font-size:.95rem;line-height:1.6;max-width:34ch;margin:0">Новый инструмент осваиваю за неделю-две — читаю документацию до конца, а не до первого рабочего примера. В работе использую Claude Code и Codex, но объяснить могу каждую строчку сам: ИИ ускоряет, а не думает за меня. Ответственно отношусь к срокам и легко объясняю технические решения нетехническим людям. Эту страницу собрал руками, на чистых HTML и CSS.</p>
       <a class="contact-link" href="mailto:letunovskiu2011@yandex.ru" style="margin-top:2rem">Написать <span>＋</span></a>
       <div class="arrow" aria-hidden="true">
         <svg width="56" height="24" viewBox="0 0 56 24" fill="none"><path d="M0 12H54M54 12L42 1M54 12L42 23" stroke="currentColor" stroke-width="2.5"/></svg>
@@ -154,6 +159,18 @@ footer{border-top:1px solid var(--rule);padding-block:2.5rem}
     </div>
   </div>
 </section>
+
+<script>
+(function(){
+  var birth = new Date(2011, 11, 1); // декабрь 2011
+  var now = new Date();
+  var age = now.getFullYear() - birth.getFullYear();
+  var hasHadBirthdayThisYear = (now.getMonth() > birth.getMonth()) ||
+    (now.getMonth() === birth.getMonth() && now.getDate() >= birth.getDate());
+  if (!hasHadBirthdayThisYear) age--;
+  document.querySelectorAll('#age, #age2').forEach(function(el){ el.textContent = age; });
+})();
+</script>
 
 <footer class="side" id="contact">
   <div class="foot-row">
