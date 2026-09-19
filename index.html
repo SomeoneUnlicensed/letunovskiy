@@ -35,6 +35,12 @@ p:last-child{margin-bottom:0}
 .item:last-child{margin-bottom:0}
 .item .t{font-weight:500}
 .item .d{color:var(--muted);margin-top:.1rem}
+.grate{margin-bottom:.9rem}
+.grate:last-child{margin-bottom:0}
+.grate summary{cursor:pointer;font-weight:500}
+.grate summary::marker{color:var(--muted)}
+.grate .file{margin-top:.6rem;color:var(--muted);font-size:.85rem}
+.grate .file:empty::before{content:"файл не добавлен";font-style:italic}
 .foot{margin-top:5rem;color:var(--muted);font-size:.88rem}
 .foot a{margin-right:1.2rem}
 </style>
@@ -60,13 +66,19 @@ p:last-child{margin-bottom:0}
   </section>
 
   <section>
-    <h2>Волонтёрство</h2>
-    <div class="item">
-      <div class="t">Беговое сообщество Физтех</div>
-    </div>
-    <div class="item">
-      <div class="t">Наставник для детей</div>
-    </div>
+    <h2>Благодарности</h2>
+    <details class="grate">
+      <summary>Беговое сообщество</summary>
+      <div class="file"><!-- сюда вставить скан благодарности --></div>
+    </details>
+    <details class="grate">
+      <summary>Физтех</summary>
+      <div class="file"><!-- сюда вставить скан благодарности --></div>
+    </details>
+    <details class="grate">
+      <summary>Наставники детям</summary>
+      <div class="file"><!-- сюда вставить скан благодарности --></div>
+    </details>
   </section>
 
   <section>
