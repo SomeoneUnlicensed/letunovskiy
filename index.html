@@ -7,278 +7,152 @@
 <meta name="description" content="Владимир Летуновский — full-stack разработчик. Go, Python, TypeScript, React. Бэкенд, фронтенд, мобильная разработка, дизайн.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;0,800;1,500&family=Fraunces:ital,wght@1,500&display=swap">
 <style>
 :root{
-  --color-bg:#ffffff;
-  --color-fg:#141414;
-  --color-fg-muted:#6b6b64;
-  --color-rule:#e1e1db;
-  --color-accent:#057f3c;
-  --font-display:"Inter",Arial,system-ui,sans-serif;
-  --font-mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
-  --side:clamp(1.5rem,5vw,3.5rem);
-  --seam:clamp(4.5rem,10vw,8.75rem);
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --color-bg:#111310;
-    --color-fg:#eef0ea;
-    --color-fg-muted:#8b9086;
-    --color-rule:#282b25;
-    --color-accent:#3fd583;
-  }
+  --bg:#0a0a0a; --ink:#f0f0f0; --muted:#7c847c; --rule:#232323;
+  --mint:#8ff0d7; --grad1:#ed3328; --grad2:#ee5336; --grad3:#831f1c;
+  --sans:"Inter",Arial,sans-serif; --serif:"Fraunces",Georgia,serif;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--color-bg);color:var(--color-fg);font:16px/1.5 var(--font-display);font-weight:400}
-a{color:var(--color-fg);text-decoration:none;border-bottom:1px solid var(--color-rule)}
-a:hover{color:var(--color-accent);border-color:var(--color-accent)}
-a:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px}
-em{font-style:italic;color:var(--color-accent)}
-.rule{border-color:var(--color-rule)}
-.text-meta{
-  font-family:var(--font-mono);
-  font-size:.72rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--color-fg-muted);
-  margin:0;
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--sans)}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:var(--mint)}
+.side{padding-inline:clamp(1.25rem,5vw,3.5rem)}
+
+/* ---- hero ---- */
+.hero{position:relative;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.blob{
+  position:absolute;inset:-10% -10% auto auto;width:75%;height:70%;
+  background:
+    radial-gradient(60% 55% at 70% 20%, var(--grad2), transparent 65%),
+    radial-gradient(50% 60% at 100% 0%, var(--grad1), transparent 70%),
+    radial-gradient(70% 70% at 60% 55%, var(--grad3), transparent 75%);
+  filter:blur(60px) saturate(115%);
+  opacity:.85;
+}
+.hero-top{position:relative;padding-top:2.5rem;max-width:24rem}
+.hero-top p{margin:0;font-size:.9rem;color:var(--ink);line-height:1.5}
+.hero-top em{font-style:italic;color:var(--mint)}
+.hero-name{position:relative;padding-bottom:3rem;line-height:.85}
+.hero-name .l1,.hero-name .l2{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.hero-name .first{
+  font-family:var(--sans);font-weight:800;letter-spacing:-.02em;
+  font-size:clamp(3rem,11vw,7.5rem);color:var(--ink);
+}
+.hero-name .last{
+  font-family:var(--serif);font-style:italic;font-weight:500;letter-spacing:-.01em;
+  font-size:clamp(2.6rem,10vw,7rem);color:var(--mint);
 }
 
-/* ---- nav (N1 inline) ---- */
-.nav{border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule);padding:1.1rem var(--side)}
-.nav-row{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;max-width:76rem;margin:0 auto}
-.wordmark{font-family:var(--font-display);font-size:1.15rem;font-weight:600;letter-spacing:-.02em;border:none;color:var(--color-fg)}
-.wordmark em{font-style:normal}
-.nav-links{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap}
-.nav-links a{border:none;font-size:.82rem;color:var(--color-fg-muted)}
-.nav-links a:hover{color:var(--color-accent)}
+/* ---- section shell ---- */
+section.block{border-top:1px solid var(--rule);padding-block:4rem}
+.eyebrow{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 1.5rem}
 
-/* ---- hero (Marquee) ---- */
-.hero{border-bottom:1px solid var(--color-rule);padding:5.5rem var(--side) var(--seam)}
-.hero-inner{max-width:76rem;margin:0 auto;display:grid;gap:2.5rem 2.5rem;grid-template-columns:1fr}
-@media (min-width:64rem){.hero-inner{grid-template-columns:2fr 10fr}}
-.hero h1{
-  font-family:var(--font-display);
-  font-weight:600;
-  max-width:20ch;
-  text-wrap:balance;
-  line-height:.98;
-  letter-spacing:-.03em;
-  font-size:clamp(2.4rem,6vw,4.6rem);
-  margin:0;
+/* ---- services / project list ---- */
+.list-row{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  padding:1.4rem 0;border-top:1px solid var(--rule);
 }
-.hero-sub{
-  font-family:var(--font-mono);
-  font-size:.85rem;
-  text-transform:none;
-  letter-spacing:0;
-  max-width:42ch;
-  color:var(--color-fg-muted);
-  margin:2.2rem 0 0;
-  line-height:1.6;
-}
-.hero-links{display:flex;gap:1.5rem;margin-top:1.6rem;flex-wrap:wrap}
-.hero-links a{font-family:var(--font-mono);font-size:.82rem;border:none;color:var(--color-fg)}
-.hero-links a:hover{color:var(--color-accent)}
+.list-row:last-child{border-bottom:1px solid var(--rule)}
+.list-row .name{font-size:clamp(1.3rem,3.5vw,1.9rem);font-weight:500;transition:color .2s}
+.list-row:hover .name{color:var(--mint)}
+.list-row .desc{color:var(--muted);font-size:.88rem;max-width:26rem;text-align:right}
 
-/* ---- shared section shell ---- */
-section.block{border-bottom:1px solid var(--color-rule);padding:var(--seam) var(--side)}
-.inner{max-width:76rem;margin:0 auto}
-.block h2{
-  font-family:var(--font-display);
-  font-weight:600;
-  max-width:22ch;
-  text-wrap:balance;
-  line-height:1.05;
-  letter-spacing:-.02em;
-  font-size:clamp(1.9rem,4.2vw,3.1rem);
-  margin:.9rem 0 0;
+/* ---- skills / bio split ---- */
+.skills{display:grid;gap:3rem;grid-template-columns:1fr}
+@media (min-width:56rem){.skills{grid-template-columns:1fr 1fr}}
+.bio h2{
+  font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;
+  font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.25;max-width:20ch;margin:0;
 }
+.bio hr{border:none;border-top:1px solid var(--rule);margin:2rem 0 1.5rem}
+.contact-link{display:inline-flex;align-items:center;gap:.6rem;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+.contact-link:hover{color:var(--mint)}
+.arrow{margin-top:2.5rem;color:var(--grad1)}
+.arrow svg{display:block}
 
-/* ---- about (long-form) ---- */
-.notes{margin-top:3.5rem;display:flex;flex-direction:column;gap:3rem}
-.note{display:grid;gap:.6rem 2.5rem;grid-template-columns:1fr}
-@media (min-width:60rem){.note{grid-template-columns:3fr 9fr}}
-.note p.body{max-width:62ch;font-size:1rem;line-height:1.65;color:var(--color-fg);margin:0}
+.accordion{border-top:1px solid var(--rule)}
+.accordion details{border-bottom:1px solid var(--rule)}
+.accordion summary{
+  list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  padding:1.15rem 0;font-size:1.15rem;
+}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion summary .toggle{font-family:var(--sans);color:var(--muted);font-size:1.2rem;width:1.2rem;text-align:center}
+.accordion details[open] summary .toggle{color:var(--mint)}
+.accordion .gloss{margin:0 0 1rem;color:var(--muted);font-size:.85rem}
+.accordion .tags{margin:0 0 1.4rem;color:var(--ink);font-size:.92rem;line-height:1.9}
 
-/* ---- stack (numbered triplet) ---- */
-.steps{margin-top:3.5rem;display:grid;gap:2.5rem;grid-template-columns:1fr}
-@media (min-width:52rem){.steps{grid-template-columns:repeat(3,1fr)}}
-.step{border-top:2px solid var(--color-fg);padding-top:1rem}
-.step .label{font-size:1.4rem;font-family:var(--font-display);font-weight:600;letter-spacing:-.01em;margin:.55rem 0 .4rem}
-.step .gloss{font-size:.88rem;color:var(--color-fg-muted);margin:0 0 .9rem}
-.step .tags{font-family:var(--font-mono);font-size:.8rem;line-height:1.9;color:var(--color-fg)}
-.step--far .tags{color:var(--color-fg-muted)}
-
-/* ---- services (alternating) ---- */
-.rows{margin-top:0;display:flex;flex-direction:column;gap:4rem}
-.svc{display:grid;gap:1rem 3rem;grid-template-columns:1fr;align-items:baseline}
-@media (min-width:52rem){.svc{grid-template-columns:1fr 4fr}}
-.svc.flip .mark{order:1;text-align:right}
-.svc.flip .txt{order:2}
-.svc .mark{
-  font-family:var(--font-display);
-  font-weight:700;
-  line-height:1;
-  color:var(--color-fg-muted);
-  font-size:clamp(3.2rem,7vw,5.5rem);
-}
-.svc .txt h3{
-  font-family:var(--font-display);
-  font-weight:600;
-  font-size:1.5rem;
-  letter-spacing:-.01em;
-  max-width:22ch;
-  margin:.55rem 0 .5rem;
-}
-.svc .txt p{max-width:52ch;font-size:.95rem;line-height:1.6;color:var(--color-fg-muted);margin:0}
-
-/* ---- footer (statement) ---- */
-footer{padding:var(--seam) var(--side)}
-footer .inner{max-width:64rem;margin:0 auto}
-.statement{
-  font-family:var(--font-display);
-  font-weight:600;
-  line-height:1.08;
-  letter-spacing:-.02em;
-  text-wrap:balance;
-  font-size:clamp(1.9rem,4.6vw,3.4rem);
-  margin:0;
-}
-.signoff{
-  margin-top:3.5rem;
-  padding-top:1.4rem;
-  border-top:1px solid var(--color-rule);
-  display:flex;
-  flex-wrap:wrap;
-  gap:1rem 2rem;
-  justify-content:space-between;
-  align-items:baseline;
-  font-family:var(--font-mono);
-  font-size:.78rem;
-  color:var(--color-fg-muted);
-}
-.signoff a{border:none;color:var(--color-fg)}
-.signoff a:hover{color:var(--color-accent)}
+/* ---- footer ---- */
+footer{border-top:1px solid var(--rule);padding-block:2.5rem}
+.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;align-items:baseline}
+.foot-links{display:flex;gap:2rem;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.copyright{color:var(--muted);font-size:.78rem}
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-row">
-    <a class="wordmark" href="#top">Владимир Летуновский<em style="color:var(--color-accent)">.</em></a>
-    <nav class="nav-links" aria-label="Основное">
-      <a href="#about">Обо мне</a>
-      <a href="#stack">Стек</a>
-      <a href="#services">Услуги</a>
-      <a href="#contact">Контакты</a>
-    </nav>
+<section class="hero">
+  <div class="blob" aria-hidden="true"></div>
+  <div class="hero-top side">
+    <p>Full-stack разработчик, <em>ищу интересные задачи</em>.<br>Go, Python, TypeScript, React.</p>
   </div>
-</header>
-
-<section class="hero" id="top">
-  <div class="hero-inner">
-    <p class="text-meta">14 лет — разработчик</p>
-    <div>
-      <h1>Разработчик, который дочитывает документацию до <em>конца</em>.</h1>
-      <p class="hero-sub">Владимир Летуновский. Full-stack: Go, Python, TypeScript, React. Собираю продукты от макета до продакшена — бэкенд, фронтенд, мобилка, дизайн.</p>
-      <div class="hero-links">
-        <a href="mailto:letunovskiu2011@yandex.ru">letunovskiu2011@yandex.ru</a>
-        <a href="https://github.com/SomeoneUnlicensed">github.com/SomeoneUnlicensed</a>
-      </div>
-    </div>
+  <div class="hero-name side">
+    <div class="l1"><span class="first">Владимир</span></div>
+    <div class="l2"><span class="last">Летуновский.</span></div>
   </div>
 </section>
 
-<section class="block" id="about">
-  <div class="inner">
-    <p class="text-meta">Обо мне</p>
-    <h2>Как я работаю.</h2>
-    <div class="notes">
-      <div class="note">
-        <p class="text-meta">Языки и бэкенд</p>
-        <p class="body">Основные языки — Go, Python и TypeScript. Уверенно работаю на бэкенде: Go, Rust, немного Ruby on Rails, PHP, Kotlin. Собираю интерфейсы на React, проектирую в Figma. Новый язык или фреймворк осваиваю за одну-две недели, со шпаргалкой по синтаксису.</p>
-      </div>
-      <div class="note">
-        <p class="text-meta">AI в разработке</p>
-        <p class="body">Активно использую Claude Code и Codex как часть рабочего процесса — это ускоряет рутину, но не заменяет понимание того, что происходит в коде. Пишу так, чтобы можно было объяснить каждую строку.</p>
-      </div>
-      <div class="note">
-        <p class="text-meta">Про эту страницу</p>
-        <p class="body">Свёрстана вручную, на голой HTML и CSS, без фреймворков и конструкторов. Возраст не мешаю с уровнем подачи.</p>
-      </div>
-    </div>
+<section class="block side" id="services">
+  <p class="eyebrow">Услуги</p>
+  <div class="list">
+    <div class="list-row"><span class="name">Бэкенд и API</span><span class="desc">Go, Python, PostgreSQL/MySQL, интеграции</span></div>
+    <div class="list-row"><span class="name">Фронтенд-интерфейсы</span><span class="desc">React, адаптивная вёрстка, от макета до продакшена</span></div>
+    <div class="list-row"><span class="name">Боты и автоматизация</span><span class="desc">Telegram-боты, парсинг, скрипты</span></div>
+    <div class="list-row"><span class="name">Дизайн и вёрстка</span><span class="desc">Figma, лендинги, e-mail-вёрстка</span></div>
   </div>
 </section>
 
-<section class="block" id="stack">
-  <div class="inner">
-    <p class="text-meta">Стек</p>
-    <h2>Три уровня, без прикрас.</h2>
-    <div class="steps">
-      <div class="step">
-        <p class="text-meta">Шаг 01</p>
-        <p class="label">Ежедневно</p>
+<section class="block side" id="about">
+  <p class="eyebrow">Обо мне</p>
+  <div class="skills">
+    <div class="bio">
+      <h2>14 лет, пишу на Go, Python и TypeScript — от бэкенда до интерфейса. Учусь быстро, делаю честно.</h2>
+      <hr>
+      <p style="color:var(--muted);font-size:.95rem;line-height:1.6;max-width:34ch;margin:0">Новый язык или фреймворк осваиваю за одну-две недели. Активно использую AI-инструменты (Claude Code, Codex) — как часть процесса, а не замену пониманию. Эта страница свёрстана вручную, на голых HTML и CSS.</p>
+      <a class="contact-link" href="mailto:letunovskiu2011@yandex.ru" style="margin-top:2rem">Написать <span>＋</span></a>
+      <div class="arrow" aria-hidden="true">
+        <svg width="56" height="24" viewBox="0 0 56 24" fill="none"><path d="M0 12H54M54 12L42 1M54 12L42 23" stroke="currentColor" stroke-width="2.5"/></svg>
+      </div>
+    </div>
+
+    <div class="accordion" id="stack">
+      <details open>
+        <summary><span>Ежедневно</span><span class="toggle">−</span></summary>
         <p class="gloss">Здесь я живу.</p>
         <p class="tags">Go · Python · TypeScript · JavaScript · HTML 5 · CSS 3 · React · Git · PostgreSQL · MySQL · Figma</p>
-      </div>
-      <div class="step">
-        <p class="text-meta">Шаг 02</p>
-        <p class="label">Есть опыт</p>
+      </details>
+      <details>
+        <summary><span>Есть опыт</span><span class="toggle">＋</span></summary>
         <p class="gloss">Делал на этом реальные задачи, помню где больно.</p>
         <p class="tags">Rust · Node.js · Django · PHP · Docker · Nginx · Telegram-боты · парсинг · SVG · Three.js · SQLite · Redis · API Яндекс Карт · API VK · 1С-Битрикс · SEO</p>
-      </div>
-      <div class="step step--far">
-        <p class="text-meta">Шаг 03</p>
-        <p class="label">Знакомлюсь</p>
-        <p class="gloss">Опыта пока немного — разберусь при необходимости.</p>
+      </details>
+      <details>
+        <summary><span>Знакомлюсь</span><span class="toggle">＋</span></summary>
+        <p class="gloss">Пробовал, опыта пока мало. Если надо, разберусь.</p>
         <p class="tags">Kotlin · Ruby · Ruby on Rails · C++ · Angular · MongoDB · Apache · XML · Unreal Engine · Stable Diffusion · нагрузочное и security-тестирование</p>
-      </div>
+      </details>
     </div>
   </div>
 </section>
 
-<section class="block" id="services">
-  <div class="inner">
-    <p class="text-meta">Услуги</p>
-    <h2>Что можно поручить.</h2>
-    <div class="rows" style="margin-top:3.5rem">
-      <div class="svc">
-        <div class="mark">A</div>
-        <div class="txt">
-          <p class="text-meta">Раздел A</p>
-          <h3>Бэкенд и API</h3>
-          <p>Сервисы и API на Go и Python, работа с PostgreSQL/MySQL, интеграции с внешними сервисами.</p>
-        </div>
-      </div>
-      <div class="svc flip">
-        <div class="mark">B</div>
-        <div class="txt">
-          <p class="text-meta">Раздел B</p>
-          <h3>Фронтенд-интерфейсы</h3>
-          <p>Сайты и веб-приложения на React, адаптивная вёрстка, от макета в Figma до готового интерфейса.</p>
-        </div>
-      </div>
-      <div class="svc">
-        <div class="mark">C</div>
-        <div class="txt">
-          <p class="text-meta">Раздел C</p>
-          <h3>Боты, автоматизация и небольшие проекты</h3>
-          <p>Telegram-боты, парсинг данных, скрипты для рутинных задач — а также лендинги, визитки и e-mail-вёрстка.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer id="contact">
-  <div class="inner">
-    <p class="statement">Есть задача — <em>напишите</em>, обсудим.</p>
-    <div class="signoff">
-      <span>Владимир Летуновский · 2026</span>
-      <a href="mailto:letunovskiu2011@yandex.ru">Написать →</a>
+<footer class="side" id="contact">
+  <div class="foot-row">
+    <span class="copyright">© Владимир Летуновский</span>
+    <div class="foot-links">
+      <a href="mailto:letunovskiu2011@yandex.ru">Email</a>
+      <a href="https://github.com/SomeoneUnlicensed">Github</a>
     </div>
   </div>
 </footer>
