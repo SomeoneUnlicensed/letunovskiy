@@ -4,69 +4,60 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Владимир Летуновский</title>
-<meta name="description" content="Владимир Летуновский — full-stack разработчик. Go, Python, TypeScript, React.">
+<meta name="description" content="Владимир Летуновский — разработчик. Go, Python, TypeScript, React.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
 <style>
 :root{
-  --bg:#f5f5f5; --bg2:#e6e6e3; --ink:#111111; --muted:#5f5f5f; --rule:#d6d6d2; --lime:#cbf35b;
-  --sans:"Inter Tight",Arial,sans-serif;
-}
-@media (prefers-color-scheme:dark){
-  :root{ --bg:#141412; --bg2:#1c1c19; --ink:#efefec; --muted:#9a9a94; --rule:#2c2c28; }
+  --bg:#000000; --ink:#d4ccd4; --muted:#8a848a; --accent:#c04315; --rule:#242024;
+  --serif:"Instrument Serif",Georgia,serif; --sans:"Inter",Arial,sans-serif;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--sans)}
 a{color:var(--ink)}
-.side{padding-inline:clamp(1.25rem,5vw,3rem)}
+.side{padding-inline:clamp(1.25rem,5vw,3.5rem)}
 
-.banner{background:var(--lime);color:#111;text-align:center;padding:.5rem 1rem;font-size:.85rem}
-.banner a{color:#111}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding-block:2.5rem}
 
-.nav{border-bottom:1px solid var(--rule);padding-block:1.1rem}
-.nav-row{display:flex;justify-content:space-between;align-items:center;max-width:90rem;margin:0 auto}
-.nav-row a{text-decoration:none;font-size:1.05rem;font-weight:500}
-.nav-links{display:flex;gap:1.5rem;font-size:.9rem}
-.nav-links a{color:var(--ink)}
-
-.hero{padding:2.5rem 0 0;overflow:hidden}
-.hero-sub{max-width:20rem;font-size:1.1rem;line-height:1.35}
-.hero-spacer{height:clamp(3rem,14vh,9rem)}
-.big-name{
-  margin:0;font-weight:900;letter-spacing:-.03em;line-height:.88;
-  white-space:nowrap;font-size:clamp(1.5rem,7vw,6.7rem);
-  padding-inline:clamp(1.25rem,5vw,3rem);
-}
-@media (max-width:40rem){
-  .big-name{white-space:normal;font-size:clamp(2.2rem,13vw,4rem)}
+.dotword{
+  font-family:var(--sans);font-weight:700;letter-spacing:-.02em;
+  font-size:clamp(3rem,15vw,11rem);line-height:.86;margin:0;
+  background-image:radial-gradient(circle, var(--muted) 1.1px, transparent 1.2px);
+  background-size:6px 6px;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  white-space:nowrap;
 }
 
-.giant{background:var(--bg2);padding:3rem 0 2.5rem;overflow:hidden}
-.giant h2{
-  margin:0;text-transform:uppercase;font-weight:900;letter-spacing:-.01em;
-  line-height:.86;font-size:clamp(2.4rem,10.5vw,7.5rem);
-  padding-inline:clamp(1.25rem,5vw,3rem);
+.headline{
+  font-family:var(--serif);font-size:clamp(1.6rem,4.4vw,2.8rem);font-weight:400;
+  line-height:1.25;max-width:20ch;margin:0;
 }
-.giant .intro{
-  max-width:34rem;margin-top:2rem;font-size:1rem;color:var(--muted);
-  padding-inline:clamp(1.25rem,5vw,3rem);
+.headline em{color:var(--accent);font-style:italic}
+.sub{
+  text-align:right;font-family:var(--sans);font-size:.85rem;color:var(--muted);
+  max-width:16rem;margin-left:auto;margin-top:1.5rem;line-height:1.5;
 }
-.giant .intro b{color:var(--ink);font-weight:500}
+.hero-mid{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap}
 
-section.block{border-bottom:1px solid var(--rule);padding-block:3.5rem}
-.block .wrap{max-width:90rem;margin:0 auto}
+.hero-foot{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--muted)}
+.hero-foot .links{display:flex;gap:1.2rem;text-transform:uppercase;letter-spacing:.05em}
+.hero-foot .links a{color:var(--muted)}
+.hero-foot .links a:hover{color:var(--ink)}
+
+section.block{border-top:1px solid var(--rule);padding-block:3.5rem}
+.block .wrap{max-width:78rem;margin:0 auto}
 .eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 1.5rem}
 
 .tiers{display:grid;gap:2rem;grid-template-columns:1fr}
 @media (min-width:52rem){.tiers{grid-template-columns:repeat(3,1fr)}}
 .tier{border-top:2px solid var(--ink);padding-top:.9rem}
-.tier h3{font-size:1.1rem;font-weight:700;margin:0 0 .3rem}
+.tier h3{font-size:1.1rem;font-weight:600;margin:0 0 .3rem}
 .tier .gloss{font-size:.85rem;color:var(--muted);margin:0 0 .8rem}
 .tier .tags{font-size:.88rem;line-height:1.85;color:var(--ink)}
 .tier--far .tags{color:var(--muted)}
 
-.exp .org{font-weight:700;font-size:1.15rem}
+.exp .org{font-weight:600;font-size:1.15rem}
 .exp .when{color:var(--muted);font-size:.85rem;margin-top:.2rem}
 
 .grate{border-top:1px solid var(--rule);padding:.9rem 0}
@@ -77,34 +68,29 @@ section.block{border-bottom:1px solid var(--rule);padding-block:3.5rem}
 .grate .file:empty::before{content:"файл не добавлен";font-style:italic}
 
 footer{padding-block:3rem}
-.foot-row{max-width:90rem;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--muted)}
+.foot-row{max-width:78rem;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--muted)}
 .foot-row a{color:var(--ink)}
 </style>
 </head>
 <body>
 
-<div class="banner">Свободен для новых задач. <a href="mailto:letunovskiu2011@yandex.ru"><u>Написать</u></a></div>
+<section class="hero side" id="top">
+  <h1 class="dotword">Летуновский</h1>
 
-<header class="nav">
-  <div class="nav-row side">
-    <a href="#top">Владимир Летуновский</a>
-    <nav class="nav-links">
+  <div class="hero-mid">
+    <p class="headline">Учусь в школе. Пишу <em>код</em>.</p>
+    <p class="sub">Go, Python, TypeScript, React.<br><span id="age">14</span> лет.</p>
+  </div>
+
+  <div class="hero-foot">
+    <span id="clock">МСК —:—</span>
+    <nav class="links">
       <a href="#stack">Стек</a>
       <a href="#experience">Опыт</a>
       <a href="#gratitude">Благодарности</a>
+      <a href="mailto:letunovskiu2011@yandex.ru">Почта</a>
     </nav>
   </div>
-</header>
-
-<section class="hero" id="top">
-  <p class="hero-sub side">Собираю сайты и сервисы своими руками.<br>Мне <span id="age">14</span>, учусь в школе.</p>
-  <div class="hero-spacer"></div>
-  <h1 class="big-name">Владимир Летуновский</h1>
-</section>
-
-<section class="giant">
-  <h2>Учусь<br>делать</h2>
-  <p class="intro"><b>Go, Python, TypeScript, React.</b> Каждый день сажусь за код: то бэкенд, то интерфейс. Нейросети под рукой, но что происходит в коде — понимаю сам.</p>
 </section>
 
 <section class="block" id="stack">
@@ -112,18 +98,18 @@ footer{padding-block:3rem}
     <p class="eyebrow">Стек</p>
     <div class="tiers">
       <div class="tier">
-        <h3>Рабочий набор</h3>
-        <p class="gloss">На этом собираю всё остальное.</p>
+        <h3>Использую</h3>
+        <p class="gloss">Каждый день.</p>
         <p class="tags">Go · Python · TypeScript · JavaScript · HTML 5 · CSS 3 · React · Git · PostgreSQL · MySQL · Figma</p>
       </div>
       <div class="tier">
-        <h3>Пройденный путь</h3>
-        <p class="gloss">Использовал в настоящих задачах, не в учебниках.</p>
+        <h3>Пробовал в деле</h3>
+        <p class="gloss">В настоящих задачах, не в учебниках.</p>
         <p class="tags">Rust · Node.js · Django · PHP · Docker · Nginx · Telegram-боты · парсинг · SVG · Three.js · SQLite · Redis · API Яндекс Карт · API VK · 1С-Битрикс · SEO</p>
       </div>
       <div class="tier tier--far">
-        <h3>На радаре</h3>
-        <p class="gloss">Смотрел, но глубоко ещё не заходил.</p>
+        <h3>Почти не трогал</h3>
+        <p class="gloss">Смотрел издалека.</p>
         <p class="tags">Kotlin · Ruby · Ruby on Rails · C++ · Angular · MongoDB · Apache · XML · Unreal Engine · Stable Diffusion · нагрузочное и security-тестирование</p>
       </div>
     </div>
@@ -172,13 +158,24 @@ footer{padding-block:3rem}
 <script>
 (function(){
   var birth = new Date(2011, 11, 1);
-  var now = new Date();
-  var age = now.getFullYear() - birth.getFullYear();
-  var hadBirthday = (now.getMonth() > birth.getMonth()) ||
-    (now.getMonth() === birth.getMonth() && now.getDate() >= birth.getDate());
-  if (!hadBirthday) age--;
-  var el = document.getElementById('age');
-  if (el) el.textContent = age;
+  function updateAge(){
+    var now = new Date();
+    var age = now.getFullYear() - birth.getFullYear();
+    var hadBirthday = (now.getMonth() > birth.getMonth()) ||
+      (now.getMonth() === birth.getMonth() && now.getDate() >= birth.getDate());
+    if (!hadBirthday) age--;
+    var el = document.getElementById('age');
+    if (el) el.textContent = age;
+  }
+  function updateClock(){
+    var el = document.getElementById('clock');
+    if (!el) return;
+    var t = new Date().toLocaleTimeString('ru-RU', {timeZone:'Europe/Moscow', hour:'2-digit', minute:'2-digit'});
+    el.textContent = 'МСК ' + t;
+  }
+  updateAge();
+  updateClock();
+  setInterval(updateClock, 30000);
 })();
 </script>
 </body>
