@@ -4,240 +4,170 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Владимир Летуновский</title>
-<meta name="description" content="Резюме разработчика Владимира Летуновского. Бэкенд, фронтенд, мобилка, дизайн.">
+<meta name="description" content="Владимир Летуновский — full-stack разработчик. Go, Python, TypeScript, React.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap">
 <style>
 :root{
-  --bg:#F1F2F3;
-  --ink:#14161A;
-  --muted:#6E747E;
-  --rule:#D5D8DC;
-  --accent:#C8102E;
-  --serif:"PT Serif",Georgia,"Times New Roman",serif;
-  --mono:"PT Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
-  --measure:38rem;
-  --gutter:13.5rem;
+  --bg:#f2f2f0; --ink:#111111; --muted:#7c7c7c; --rule:#c9c9c5; --lime:#cbf35b;
+  --sans:"Inter Tight",Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){
-  :root{
-    --bg:#131519;
-    --ink:#E6E8EB;
-    --muted:#878E99;
-    --rule:#282C33;
-    --accent:#FF5A5A;
-  }
+  :root{ --bg:#151513; --ink:#eeeeec; --muted:#8a8a86; --rule:#2c2c29; }
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font:17px/1.62 var(--serif);
-  font-kerning:normal;
-  text-rendering:optimizeLegibility;
-}
-main{
-  max-width:calc(var(--gutter) + var(--measure));
-  margin:0 auto;
-  padding:5rem 1.5rem 6rem;
-}
-h1{
-  font-size:clamp(2.1rem,7vw,3.1rem);
-  line-height:1.05;
-  letter-spacing:-.015em;
-  margin:0 0 .5rem;
-  text-wrap:balance;
-}
-p{margin:0 0 1.05em}
-p:last-child{margin-bottom:0}
-a{color:var(--accent);text-underline-offset:.2em;text-decoration-thickness:1px}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--sans)}
+a{color:var(--ink)}
+.side{padding-inline:clamp(1.25rem,5vw,3rem)}
 
-.top{padding-bottom:3.25rem}
-.meta{
-  font-family:var(--mono);
-  font-size:.82rem;
-  line-height:2;
-  color:var(--muted);
-}
-.meta a{color:var(--ink)}
+.banner{background:var(--lime);color:#111;text-align:center;padding:.55rem 1rem;font-size:.82rem}
+.banner a{border-bottom:1px solid #111}
 
-.row{
-  display:grid;
-  gap:.85rem;
-  padding-block:3.4rem;
-  border-top:1px solid var(--rule);
-}
-@media (min-width:60rem){
-  .row{grid-template-columns:var(--gutter) 1fr;gap:0}
-}
-.label{
-  font-family:var(--mono);
-  font-size:.68rem;
-  line-height:1.55;
-  letter-spacing:.11em;
-  text-transform:uppercase;
-  color:var(--muted);
-  padding:.5rem 2.5rem 0 0;
-  margin:0;
-}
-.body{max-width:var(--measure)}
+.nav{border-bottom:1px solid var(--rule);padding-block:1rem}
+.nav-row{display:flex;justify-content:space-between;align-items:center;max-width:78rem;margin:0 auto}
+.nav-row a{text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;font-size:.85rem;color:var(--muted)}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
 
-.thesis{
-  font-size:clamp(1.4rem,4.2vw,2rem);
-  line-height:1.3;
-  max-width:22ch;
-  text-wrap:balance;
+.hero{position:relative;padding:3.5rem 0 2.5rem;overflow:hidden;border-bottom:1px solid var(--rule)}
+.ghost{
+  position:absolute;top:2rem;left:0;right:0;text-align:right;
+  font-weight:800;font-size:clamp(3rem,14vw,9rem);line-height:.86;
+  color:var(--ink);opacity:.06;letter-spacing:-.02em;pointer-events:none;
+  padding-inline:clamp(1.25rem,5vw,3rem);
 }
-.age{
-  display:block;
-  font-size:clamp(9rem,30vw,19rem);
-  line-height:.78;
-  font-weight:700;
-  letter-spacing:-.05em;
-  color:var(--accent);
-  margin-bottom:1.4rem;
-  font-variant-numeric:lining-nums;
-}
-.age-note{max-width:34rem}
+.stack-name{position:relative;font-weight:800;letter-spacing:-.03em;line-height:.86;margin:0}
+.stack-name span{display:block;font-size:clamp(3.4rem,13vw,8.5rem);white-space:nowrap}
+.hero-sub{position:relative;max-width:28rem;margin-top:2rem;font-size:1rem;color:var(--muted)}
+.hero-sub b{color:var(--ink);font-weight:500}
 
-.tier{margin-bottom:2.25rem}
-.tier:last-child{margin-bottom:0}
-.tier h3{
-  font-family:var(--mono);
-  font-size:.78rem;
-  font-weight:400;
-  letter-spacing:.06em;
-  margin:0 0 .15rem;
-}
-.gloss{
-  font-size:.92rem;
-  font-style:italic;
-  color:var(--muted);
-  margin-bottom:.7rem;
-}
-.stack{
-  font-family:var(--mono);
-  font-size:.85rem;
-  line-height:1.85;
-}
-.tier--far .stack{color:var(--muted)}
+.band{background:#111;color:#f2f2f0;padding:3rem 0}
+.band p{max-width:52rem;margin:0 auto;font-size:clamp(1.05rem,2.4vw,1.4rem);line-height:1.5;font-weight:500}
+.band em{color:var(--lime);font-style:normal}
 
-.exp{margin-bottom:1.5rem}
-.exp:last-child{margin-bottom:0}
-.exp .org{font-weight:700}
-.exp .when{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+section.block{border-bottom:1px solid var(--rule);padding-block:3.5rem}
+.block .wrap{max-width:78rem;margin:0 auto}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 1.5rem}
 
-.grate{border-top:1px solid var(--rule);padding:1rem 0}
+.tiers{display:grid;gap:2rem;grid-template-columns:1fr}
+@media (min-width:52rem){.tiers{grid-template-columns:repeat(3,1fr)}}
+.tier{border-top:2px solid var(--ink);padding-top:.9rem}
+.tier h3{font-size:1.1rem;font-weight:700;margin:0 0 .3rem}
+.tier .gloss{font-size:.85rem;color:var(--muted);margin:0 0 .8rem}
+.tier .tags{font-size:.88rem;line-height:1.85;color:var(--ink)}
+.tier--far .tags{color:var(--muted)}
+
+.exp .org{font-weight:700;font-size:1.15rem}
+.exp .when{color:var(--muted);font-size:.85rem;margin-top:.2rem}
+
+.grate{border-top:1px solid var(--rule);padding:.9rem 0}
 .grate:last-of-type{border-bottom:1px solid var(--rule)}
-.grate summary{cursor:pointer;font-family:var(--mono);font-size:.85rem;letter-spacing:.02em}
-.grate summary::marker{color:var(--accent)}
-.grate .file{margin-top:.7rem;font-size:.88rem;color:var(--muted)}
+.grate summary{cursor:pointer;font-weight:500}
+.grate summary::marker{color:var(--muted)}
+.grate .file{margin-top:.6rem;font-size:.85rem;color:var(--muted)}
 .grate .file:empty::before{content:"файл не добавлен";font-style:italic}
 
-.reveal{animation:rise .7s cubic-bezier(.2,.7,.3,1) both}
-.reveal-2{animation-delay:.09s}
-@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){
-  .reveal{animation:none}
-}
+footer{padding-block:3rem}
+.foot-row{max-width:78rem;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--muted)}
+.foot-row a{color:var(--ink)}
 </style>
 </head>
 <body>
-<main>
-  <header class="top reveal">
-    <h1>Владимир&nbsp;Летуновский</h1>
-    <p class="meta">
-      github.com/<a href="https://github.com/SomeoneUnlicensed">SomeoneUnlicensed</a><br>
-      <a href="mailto:letunovskiu2011@yandex.ru">letunovskiu2011@yandex.ru</a>
-    </p>
-  </header>
 
-  <section class="row reveal reveal-2">
-    <p class="label">Короткус о себесус</p>
-    <div class="body">
-      <p class="thesis">Весёлый, добрый, немножко тупящий, но супер энергичный чувак.</p>
-    </div>
-  </section>
+<div class="banner">Открыт к проектам. <a href="mailto:letunovskiu2011@yandex.ru">Написать →</a></div>
 
-  <section class="row">
-    <p class="label">О мне немножкус</p>
-    <div class="body">
-      <p>Основные язычки: Go, Python и TS. Умею в бэк на Go, Rust, чуть-чуть Ruby on&nbsp;Rails, PHP и Kotlin. Новый язык или стек за недельку-две нормально изучу, со шпаргалкой по синтаксису.</p>
-      <p>Вообще как будто макетики рисуют дизайнеры со вкусом. Эта страница нарисована прямо с нуля, на голой HTML-ке. Фигму тоже можно заюзать, если что.</p>
-    </div>
-  </section>
+<header class="nav">
+  <div class="nav-row side">
+    <a href="#top"><b>Владимир Летуновский</b></a>
+    <nav class="nav-links">
+      <a href="#stack">Стек</a>
+      <a href="#experience">Опыт</a>
+      <a href="#gratitude">Благодарности</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="row">
-    <p class="label">Возраст</p>
-    <div class="body">
-      <span class="age" id="age">14</span>
-      <p class="age-note">Считаю своим преимуществом: пока старые дедушки сидят на C++ и кодят legacy-ядра, я сижу с ИИшкой и кодю новый сайтик под чай.</p>
-    </div>
-  </section>
+<section class="hero side" id="top">
+  <div class="ghost" aria-hidden="true">РАЗРАБОТЧИК</div>
+  <h1 class="stack-name">
+    <span>Владимир</span>
+    <span>Летунов-</span>
+    <span>ский</span>
+  </h1>
+  <p class="hero-sub"><b>Full-stack разработчик, <span id="age">14</span> лет.</b> Go, Python, TypeScript, React — от бэкенда до интерфейса.</p>
+</section>
 
-  <section class="row">
-    <p class="label">Опытус</p>
-    <div class="body">
-      <div class="exp">
-        <div class="org">Студия Артемия Лебедева</div>
-        <div class="when">2026 — настоящее время</div>
-      </div>
-    </div>
-  </section>
+<div class="band">
+  <p>Пишу код каждый день — не ради оценок, а ради результата, который <em>реально работает</em>.</p>
+</div>
 
-  <section class="row">
-    <p class="label">Благодарнус</p>
-    <div class="body">
-      <details class="grate">
-        <summary>Беговое сообщество</summary>
-        <div class="file"><!-- сюда вставить скан благодарности --></div>
-      </details>
-      <details class="grate">
-        <summary>Физтех</summary>
-        <div class="file"><!-- сюда вставить скан благодарности --></div>
-      </details>
-      <details class="grate">
-        <summary>Наставники детям</summary>
-        <div class="file"><!-- сюда вставить скан благодарности --></div>
-      </details>
-    </div>
-  </section>
-
-  <section class="row">
-    <p class="label">Стекус</p>
-    <div class="body">
+<section class="block" id="stack">
+  <div class="wrap side">
+    <p class="eyebrow">Стек</p>
+    <div class="tiers">
       <div class="tier">
-        <h3>Ежедневус</h3>
-        <p class="gloss">Тут я живу.</p>
-        <p class="stack">Go · Python · TypeScript · JavaScript · HTML&nbsp;5 · CSS&nbsp;3 · React · Git · Claude&nbsp;Code · Codex · AI-driven разработка · Figma · PostgreSQL · MySQL</p>
+        <h3>Ежедневно</h3>
+        <p class="gloss">Здесь я живу.</p>
+        <p class="tags">Go · Python · TypeScript · JavaScript · HTML 5 · CSS 3 · React · Git · PostgreSQL · MySQL · Figma</p>
       </div>
       <div class="tier">
-        <h3>Боевусы</h3>
+        <h3>Есть опыт</h3>
         <p class="gloss">Делал на этом реальные задачи, помню где больно.</p>
-        <p class="stack">Rust · Node.js · Django · PHP · Docker · Nginx · Telegram-боты · парсинг · SVG · Three.js · SQLite · Redis · адаптивная вёрстка · вёрстка писем · API Яндекс&nbsp;Карт · API&nbsp;VK · 1С-Битрикс · SEO</p>
+        <p class="tags">Rust · Node.js · Django · PHP · Docker · Nginx · Telegram-боты · парсинг · SVG · Three.js · SQLite · Redis · API Яндекс Карт · API VK · 1С-Битрикс · SEO</p>
       </div>
       <div class="tier tier--far">
-        <h3>Трогалус</h3>
+        <h3>Знакомлюсь</h3>
         <p class="gloss">Пробовал, опыта пока мало. Если надо, разберусь.</p>
-        <p class="stack">Kotlin · Ruby · Ruby on&nbsp;Rails · C++ · Angular · MongoDB · Apache · XML · Unreal&nbsp;Engine · фотограмметрия · Stable&nbsp;Diffusion · нагрузочное и security-тестирование</p>
+        <p class="tags">Kotlin · Ruby · Ruby on Rails · C++ · Angular · MongoDB · Apache · XML · Unreal Engine · Stable Diffusion · нагрузочное и security-тестирование</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="row">
-    <p class="label">Ещёус</p>
-    <div class="body">
-      <p>Пишу по-русски достаточно приятно, говорю прилично. Могу водички налить, если надо. Если не надо, не налью.</p>
+<section class="block" id="experience">
+  <div class="wrap side">
+    <p class="eyebrow">Опыт</p>
+    <div class="exp">
+      <div class="org">Студия Артемия Лебедева</div>
+      <div class="when">2026 — настоящее время</div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
+
+<section class="block" id="gratitude">
+  <div class="wrap side">
+    <p class="eyebrow">Благодарности</p>
+    <details class="grate">
+      <summary>Беговое сообщество</summary>
+      <div class="file"><!-- сюда вставить скан благодарности --></div>
+    </details>
+    <details class="grate">
+      <summary>Физтех</summary>
+      <div class="file"><!-- сюда вставить скан благодарности --></div>
+    </details>
+    <details class="grate">
+      <summary>Наставники детям</summary>
+      <div class="file"><!-- сюда вставить скан благодарности --></div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-row side">
+    <span>© Владимир Летуновский</span>
+    <span>
+      <a href="mailto:letunovskiu2011@yandex.ru">letunovskiu2011@yandex.ru</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/SomeoneUnlicensed">github.com/SomeoneUnlicensed</a>
+    </span>
+  </div>
+</footer>
+
 <script>
 (function(){
-  var birth = new Date(2011, 11, 1); // декабрь 2011
+  var birth = new Date(2011, 11, 1);
   var now = new Date();
   var age = now.getFullYear() - birth.getFullYear();
   var hadBirthday = (now.getMonth() > birth.getMonth()) ||
