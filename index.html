@@ -3,197 +3,454 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Владимир Летуновский</title>
-<meta name="description" content="Резюме разработчика Владимира Летуновского. Бэкенд, фронтенд, мобилка, дизайн.">
+<title>Владимир Летуновский, разработчик в Студии Артемия Лебедева</title>
+<meta name="description" content="Владимир Летуновский, разработчик в Студии Артемия Лебедева: сервисы «Фокус» и «Иронов».">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Владимир Летуновский">
+<meta property="og:description" content="Разработчик в Студии Артемия Лебедева. Делаю «Фокус» и «Иронов».">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F1F2F3;
-  --ink:#14161A;
-  --muted:#6E747E;
-  --rule:#D5D8DC;
-  --accent:#C8102E;
-  --serif:"PT Serif",Georgia,"Times New Roman",serif;
-  --mono:"PT Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
-  --measure:38rem;
-  --gutter:13.5rem;
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --bg:#131519;
-    --ink:#E6E8EB;
-    --muted:#878E99;
-    --rule:#282C33;
-    --accent:#FF5A5A;
-  }
+  --paper:#ffffff;
+  --ink:#0a0a0a;
+  --muted:#6b6b6b;
+  --red:#d92b21;
+  --pad:clamp(16px,1.5vw,24px);
+  --font:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --display:"Golos Text",system-ui,sans-serif;
+  --masthead:clamp(40px,12.4vw,315px);
+  --gap:clamp(96px,11vw,176px);
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font:17px/1.62 var(--serif);
-  font-kerning:normal;
-  text-rendering:optimizeLegibility;
+  margin:0;background:var(--paper);color:var(--ink);
+  font:400 18px/1.5 var(--font);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
-main{
-  max-width:calc(var(--gutter) + var(--measure));
-  margin:0 auto;
-  padding:5rem 1.5rem 6rem;
-}
-h1{
-  font-size:clamp(2.1rem,7vw,3.1rem);
-  line-height:1.05;
-  letter-spacing:-.015em;
-  margin:0 0 .5rem;
-  text-wrap:balance;
-}
-p{margin:0 0 1.05em}
-p:last-child{margin-bottom:0}
-a{color:var(--accent);text-underline-offset:.2em;text-decoration-thickness:1px}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3,p,figure{margin:0}
+a{color:inherit}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+::selection{background:var(--red);color:#fff}
+.skip{position:absolute;left:16px;top:-60px;z-index:20;background:var(--ink);color:#fff;padding:10px 16px;text-decoration:none}
+.skip:focus{top:16px}
 
-.top{padding-bottom:3.25rem}
-.meta{
-  font-family:var(--mono);
-  font-size:.82rem;
-  line-height:2;
-  color:var(--muted);
+/* ---------- hero ---------- */
+.hero{
+  min-height:100svh;padding:var(--pad);
+  display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto 1fr auto;
+  grid-template-areas:"top top" "name name" "foot foot";gap:24px;overflow:clip;
 }
-.meta a{color:var(--ink)}
+.hero-top{grid-area:top;display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.hero-lead{max-width:34ch}
+.hero-line{font-size:18px;line-height:1.42;text-wrap:pretty}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;margin-top:20px;padding:0 24px;
+  background:var(--red);color:#fff;font:500 16px/1 var(--font);text-decoration:none;
+  transition:background .2s ease;
+}
+.btn:hover{background:var(--ink)}
+.nav{display:flex;gap:24px;font-size:16px;line-height:1.2;padding-top:3px}
+.nav a{text-decoration:none;transition:color .2s ease}
+.nav a:hover{color:var(--red)}
+.hero-name{grid-area:name;display:flex;align-items:center;justify-content:center;min-height:0}
+.masthead{
+  width:100%;font-family:var(--display);font-weight:900;font-size:var(--masthead);
+  line-height:.84;letter-spacing:-.02em;text-transform:uppercase;text-align:center;
+  transform-origin:50% 50%;will-change:transform;
+}
+.masthead__last{display:block;white-space:nowrap}
+.masthead__first{
+  display:block;margin-top:14px;text-align:left;
+  font-family:var(--font);font-weight:500;font-size:16px;line-height:1.2;
+  letter-spacing:0;text-transform:none;color:var(--muted);
+}
+.hero-foot{grid-area:foot;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;font-size:16px}
+.hero-foot a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--ink)}
+.hero-foot a:hover{color:var(--red);text-decoration-color:var(--red)}
+.hero-shot{display:none;margin:0;overflow:hidden;background:#111}
+.hero-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 32%}
 
-.row{
-  display:grid;
-  gap:.85rem;
-  padding-block:3.4rem;
-  border-top:1px solid var(--rule);
+/* ---------- shared ---------- */
+h2{
+  font-family:var(--display);font-weight:700;text-transform:none;
+  font-size:clamp(28px,3.3vw,48px);line-height:1.02;letter-spacing:-.03em;text-wrap:balance;
 }
-@media (min-width:60rem){
-  .row{grid-template-columns:var(--gutter) 1fr;gap:0}
+h3{
+  font-family:var(--display);font-weight:700;text-transform:none;
+  font-size:clamp(26px,2.8vw,40px);line-height:1.03;letter-spacing:-.03em;
 }
-.label{
-  font-family:var(--mono);
-  font-size:.68rem;
-  line-height:1.55;
-  letter-spacing:.11em;
-  text-transform:uppercase;
-  color:var(--muted);
-  padding:.5rem 2.5rem 0 0;
-  margin:0;
-}
-.body{max-width:var(--measure)}
+.work,.stack{padding:var(--gap) var(--pad)}
 
-.thesis{
-  font-size:clamp(1.4rem,4.2vw,2rem);
-  line-height:1.3;
-  max-width:22ch;
-  text-wrap:balance;
-}
+/* ---------- work ---------- */
+.work-head{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,64px);align-items:start;margin-bottom:clamp(56px,7vw,104px)}
+.work-head p{font-size:18px;line-height:1.5;max-width:42ch;text-wrap:pretty}
+.project-head{display:grid;grid-template-columns:4fr 4.6fr 3.4fr;gap:clamp(20px,3vw,48px);align-items:start;margin-bottom:clamp(20px,2.4vw,32px)}
+.project-head h3{text-wrap:balance}
+.project-desc{font-size:18px;line-height:1.5;max-width:46ch;text-wrap:pretty}
+.links{display:flex;flex-direction:column;gap:8px;font-size:16px;line-height:1.35;justify-self:start}
+.links a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--red);transition:color .2s ease}
+.links a:hover{color:var(--red)}
+.project-media{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(16px,2vw,28px);align-items:end}
+.project + .project{margin-top:clamp(72px,9vw,144px)}
+.project--reverse .project-media{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}
+.project--reverse .shot--detail{order:1}
+.project--reverse .shot--main{order:2}
+.shot{overflow:hidden;background:#111}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%;will-change:transform}
+.shot--main{height:clamp(340px,60svh,600px)}
+.shot--main img{object-position:50% 28%}
+.shot--detail{height:auto;aspect-ratio:4 / 3}
+.shot--detail img{object-position:50% 50%;transform:none}
+.shot--detail--ironov img{object-position:50% 42%}
+
+/* ---------- age ---------- */
 .age{
-  display:block;
-  font-size:clamp(9rem,30vw,19rem);
-  line-height:.78;
-  font-weight:700;
-  letter-spacing:-.05em;
-  color:var(--accent);
-  margin-bottom:1.4rem;
-  font-variant-numeric:lining-nums;
+  background:var(--red);color:#fff;
+  min-height:86svh;padding:clamp(72px,8vw,120px) var(--pad) clamp(48px,6vw,88px);
+  display:flex;flex-direction:column;justify-content:space-between;gap:40px;overflow:clip;
 }
-.age-note{max-width:34rem}
+.age h2{color:#fff}
+.age-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(24px,5vw,72px);align-items:end}
+.age-figure{
+  display:flex;align-items:flex-start;gap:.04em;
+  font-family:var(--display);font-weight:900;
+  font-size:clamp(112px,21vw,320px);line-height:.76;letter-spacing:-.065em;
+}
+.age-unit{font-weight:500;font-size:.15em;line-height:1;margin-top:.42em;letter-spacing:0}
+.age-copy{max-width:40ch;padding-bottom:12px}
+.age-exact{font-size:clamp(20px,2.1vw,30px);line-height:1.3;font-variant-numeric:tabular-nums}
+.age-next{font-size:16px;line-height:1.35;margin-top:12px;font-variant-numeric:tabular-nums}
 
-.tier{margin-bottom:2.25rem}
-.tier:last-child{margin-bottom:0}
-.tier h3{
-  font-family:var(--mono);
-  font-size:.78rem;
-  font-weight:400;
-  letter-spacing:.06em;
-  margin:0 0 .15rem;
+/* ---------- stack ---------- */
+.stack-list{list-style:none;margin:clamp(40px,5vw,72px) 0 0;padding:0}
+.stack-list li{
+  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.1fr) auto;
+  gap:clamp(16px,3vw,48px);align-items:baseline;
+  padding:clamp(8px,1vw,14px) 0;
+  font-size:clamp(20px,2.1vw,30px);line-height:1.35;
 }
-.gloss{
-  font-size:.92rem;
-  font-style:italic;
-  color:var(--muted);
-  margin-bottom:.7rem;
-}
-.stack{
-  font-family:var(--mono);
-  font-size:.85rem;
-  line-height:1.85;
-}
-.tier--far .stack{color:var(--muted)}
+.stack-tool{font-weight:500}
+.stack-use{color:var(--muted)}
+.stack-when{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.stack-list li:hover .stack-tool{color:var(--red)}
 
-.reveal{animation:rise .7s cubic-bezier(.2,.7,.3,1) both}
-.reveal-2{animation-delay:.09s}
-@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* ---------- contact / footer ---------- */
+.close{
+  background:var(--ink);color:#fff;
+  padding:clamp(72px,8vw,120px) var(--pad) var(--pad);
+  display:flex;flex-direction:column;min-height:100svh;
+}
+.close h2{color:#fff}
+.contact-rows{display:flex;flex-direction:column;margin-top:clamp(40px,6vw,80px)}
+.contact-rows a{
+  display:block;font-family:var(--font);font-weight:500;
+  font-size:clamp(22px,5.6vw,76px);line-height:1.22;letter-spacing:-.03em;
+  text-decoration:none;padding:4px 0;transition:color .2s ease,transform .2s ease;
+}
+.contact-rows a:hover{color:var(--red);transform:translateX(6px)}
+.close-bottom{display:flex;justify-content:space-between;gap:24px;margin-top:auto;padding-top:clamp(72px,10vw,140px);font-size:16px}
+.close-bottom a{text-decoration:underline;text-underline-offset:4px}
+.close-bottom a:hover{color:var(--red)}
+.masthead--foot{color:#fff;margin-top:clamp(24px,3vw,40px)}
+
+/* ---------- motion ---------- */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .reveal.is-in{opacity:1;transform:none}
+.js .hero-lead,.js .nav,.js .hero-foot{animation:rise .8s cubic-bezier(.2,.7,.3,1) both}
+.js .nav{animation-delay:.08s}
+.js .hero-foot{animation-delay:.16s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){
-  .reveal{animation:none}
+  html{scroll-behavior:auto}
+  .js .reveal,.js .hero-lead,.js .nav,.js .hero-foot{animation:none;opacity:1;transform:none;transition:none}
+  .shot img,.hero-shot img{transform:none}
+  .contact-rows a:hover{transform:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  :root{--masthead:11.6vw}
+  .hero{
+    padding:16px 0 0;gap:0;grid-template-columns:1fr;
+    grid-template-rows:auto auto auto auto minmax(180px,1fr);
+    grid-template-areas:"nav" "name" "lead" "foot" "shot";
+  }
+  .hero-top{display:contents}
+  .nav{grid-area:nav;justify-content:flex-end;gap:18px;padding:0 16px;margin-bottom:12vh;font-size:16px}
+  .hero-name{grid-area:name;justify-content:flex-start;padding:0 16px}
+  .masthead{text-align:left}
+  .masthead__first{text-align:left;margin-top:10px}
+  .hero-lead{grid-area:lead;max-width:none;padding:26px 16px 0}
+  .btn{margin-top:16px}
+  .hero-foot{grid-area:foot;padding:18px 16px 14px;font-size:16px}
+  .hero-shot{display:block;grid-area:shot;min-height:180px}
+  .project-head{grid-template-columns:1fr;gap:18px}
+  .project-media,.project--reverse .project-media{grid-template-columns:1fr;gap:16px}
+  .shot--main{height:auto;aspect-ratio:4 / 3;min-height:0}
+  .shot--detail{height:auto;aspect-ratio:4 / 3}
+  .shot--detail--ironov{aspect-ratio:2 / 1}
+  .project--reverse .shot--detail,.project--reverse .shot--main{order:0}
+  .links{flex-direction:row;flex-wrap:wrap;gap:8px 20px}
+  .work-head{grid-template-columns:1fr;gap:20px}
+  .work-head p{max-width:52ch}
+  .age{min-height:0;gap:56px;padding-bottom:64px}
+  .age-grid{grid-template-columns:1.05fr .95fr;gap:32px;align-items:end}
+  .age-figure{font-size:17vw}
+  .age-copy{padding-bottom:6px}
+  .close{min-height:0;padding-bottom:16px}
+  .close-bottom{padding-top:96px}
+}
+@media (max-width:600px){
+  body{font-size:18px}
+  .hero-lead{padding-top:22px}
+  .hero-line{font-size:18px}
+  .btn{width:100%}
+  .work,.stack{padding:72px 16px}
+  .work{padding-top:80px}
+  .work-head{margin-bottom:40px}
+  .work-head p{font-size:18px}
+  .project-desc{font-size:18px}
+  .project + .project{margin-top:72px}
+  .age{padding:64px 16px 48px}
+  .age-grid{grid-template-columns:1fr;gap:28px}
+  .age-figure{font-size:38vw}
+  .age-unit{font-size:.16em}
+  .age-copy{max-width:none}
+  .stack-list li{grid-template-columns:1fr auto;gap:2px 16px;font-size:20px;padding:12px 0}
+  .stack-use{grid-column:1;font-size:16px}
+  .stack-when{grid-column:2;grid-row:1 / span 2;align-self:center;font-size:16px}
+  .close{padding:64px 16px 16px}
+  .contact-rows{margin-top:32px}
+  .contact-rows a{font-size:8.2vw;padding:8px 0}
+  .close-bottom{font-size:16px;padding-top:64px}
+  .masthead--foot{margin-top:32px}
 }
 </style>
 </head>
 <body>
-<main>
-  <header class="top reveal">
-    <h1>Владимир&nbsp;Летуновский</h1>
-    <p class="meta">
-      github.com/<a href="https://github.com/SomeoneUnlicensed">SomeoneUnlicensed</a><br>
-      <a href="mailto:letunovskiu2011@yandex.ru">letunovskiu2011@yandex.ru</a>
-    </p>
-  </header>
+<a class="skip" href="#main">К содержанию</a>
 
-  <section class="row reveal reveal-2">
-    <p class="label">Короткус о себесус</p>
-    <div class="body">
-      <p class="thesis">Весёлый, добрый, немножко тупящий, но супер энергичный чувак.</p>
+<header class="hero" id="top">
+  <div class="hero-top">
+    <div class="hero-lead">
+      <p class="hero-line">Разработчик в Студии Артемия Лебедева, делаю сервисы «Фокус» и «Иронов».</p>
+      <a class="btn" href="mailto:letunovskiu2011@yandex.ru?subject=%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0">Написать</a>
     </div>
-  </section>
+    <nav class="nav" aria-label="Разделы страницы">
+      <a href="#work">Работа</a>
+      <a href="#stack">Стек</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </div>
 
-  <section class="row">
-    <p class="label">О мне немножкус</p>
-    <div class="body">
-      <p>Основные язычки: Go, Python и TS. Умею в бэк на Go, Rust, чуть-чуть Ruby on&nbsp;Rails, PHP и Kotlin. Новый язык или стек за недельку-две нормально изучу, со шпаргалкой по синтаксису.</p>
-      <p>Вообще как будто макетики рисуют дизайнеры со вкусом. Эта страница нарисована прямо с нуля, на голой HTML-ке. Фигму тоже можно заюзать, если что.</p>
+  <div class="hero-name">
+    <h1 class="masthead">
+      <span class="masthead__last">Летуновский</span>
+      <span class="masthead__first">Владимир</span>
+    </h1>
+  </div>
+
+  <figure class="hero-shot">
+    <img src="assets/fokus-detail.jpg" alt="Слайд, собранный в «Фокусе»: зелёные растения на компьютере и телефоне" width="1000" height="750" fetchpriority="high">
+  </figure>
+
+  <div class="hero-foot">
+    <p><span id="hero-age">14 лет</span></p>
+    <a href="https://github.com/SomeoneUnlicensed">GitHub</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="work" id="work">
+    <div class="work-head reveal">
+      <h2>Студия Лебедева</h2>
+      <p>«Фокус» собирает презентации, «Иронов» — логотипы и айдентику по названию.</p>
     </div>
-  </section>
 
-  <section class="row">
-    <p class="label">Возраст</p>
-    <div class="body">
-      <span class="age">14</span>
-      <p class="age-note">Считаю своим преимуществом: пока старые дедушки сидят на C++ и кодят legacy-ядра, я сижу с ИИшкой и кодю новый сайтик под чай.</p>
-    </div>
-  </section>
-
-  <section class="row">
-    <p class="label">Стекус</p>
-    <div class="body">
-      <div class="tier">
-        <h3>Ежедневус</h3>
-        <p class="gloss">Тут я живу.</p>
-        <p class="stack">Go · Python · TypeScript · JavaScript · HTML&nbsp;5 · CSS&nbsp;3 · React · Git · Claude&nbsp;Code · Codex · AI-driven разработка · Figma · PostgreSQL · MySQL</p>
+    <article class="project">
+      <div class="project-head reveal">
+        <h3>Фокус</h3>
+        <p class="project-desc">Конструктор презентаций: слайды собираются из текста, а сетку, шрифты и цвета сервис выбирает сам. Презентацию можно показать с телефона, скачать в PDF или PPTX и превратить в сайт.</p>
+        <p class="links">
+          <a href="https://www.artlebedev.ru/fokus/">Страница проекта</a>
+          <a href="https://fokus.am/">Сервис</a>
+        </p>
       </div>
-      <div class="tier">
-        <h3>Боевусы</h3>
-        <p class="gloss">Делал на этом реальные задачи, помню где больно.</p>
-        <p class="stack">Rust · Node.js · Django · PHP · Docker · Nginx · Telegram-боты · парсинг · SVG · Three.js · SQLite · Redis · адаптивная вёрстка · вёрстка писем · API Яндекс&nbsp;Карт · API&nbsp;VK · 1С-Битрикс · SEO</p>
+      <div class="project-media">
+        <figure class="shot shot--main">
+          <img src="assets/fokus-main.jpg" alt="Главная страница «Фокуса»: заголовок «Создать идеальную презентацию быстро» и кнопка «Начать бесплатно» на чёрном фоне" width="1800" height="1375" loading="lazy">
+        </figure>
+        <figure class="shot shot--detail">
+          <img src="assets/fokus-detail.jpg" alt="Слайд «Фокуса» с зелёными растениями на компьютере и телефоне" width="1000" height="750" loading="lazy">
+        </figure>
       </div>
-      <div class="tier tier--far">
-        <h3>Трогалус</h3>
-        <p class="gloss">Пробовал, опыта пока мало. Если надо, разберусь.</p>
-        <p class="stack">Kotlin · Ruby · Ruby on&nbsp;Rails · C++ · Angular · MongoDB · Apache · XML · Unreal&nbsp;Engine · фотограмметрия · Stable&nbsp;Diffusion · нагрузочное и security-тестирование</p>
+    </article>
+
+    <article class="project project--reverse">
+      <div class="project-head reveal">
+        <h3>Иронов</h3>
+        <p class="project-desc">Генератор логотипов и айдентики: по названию проекта собирает знак, палитру, паттерн, визитки и шаблоны для соцсетей.</p>
+        <p class="links">
+          <a href="https://www.artlebedev.ru/ironov/">Страница проекта</a>
+          <a href="https://ironov.artlebedev.ru/">Сервис</a>
+        </p>
+      </div>
+      <div class="project-media">
+        <figure class="shot shot--main">
+          <img src="assets/ironov-main.jpg" alt="Главная страница «Иронова»: «Создать логотип за секунды с технологией Студии Артемия Лебедева» и зелёная кнопка" width="1800" height="1375" loading="lazy">
+        </figure>
+        <figure class="shot shot--detail shot--detail--ironov">
+          <img src="assets/ironov-detail.jpg" alt="Вывеска RADUGA SCHOOL с логотипом, сгенерированным в «Иронове»" width="1200" height="600" loading="lazy">
+        </figure>
+      </div>
+    </article>
+  </section>
+
+  <section class="age" id="age">
+    <h2 class="reveal">Возраст</h2>
+    <div class="age-grid">
+      <p class="age-figure reveal"><span id="age-years">14</span><span class="age-unit" id="age-unit">лет</span></p>
+      <div class="age-copy reveal">
+        <p class="age-exact" id="age-exact">14 лет 10 месяцев 29 дней</p>
+        <p class="age-next" id="age-next">В декабре будет 15</p>
       </div>
     </div>
   </section>
 
-  <section class="row">
-    <p class="label">Ещёус</p>
-    <div class="body">
-      <p>Пишу по-русски достаточно приятно, говорю прилично. Могу водички налить, если надо. Если не надо, не налью.</p>
-    </div>
+  <section class="stack" id="stack">
+    <h2 class="reveal">Стек</h2>
+    <ul class="stack-list">
+      <li class="reveal"><span class="stack-tool">Go</span><span class="stack-use">сервер</span><span class="stack-when">каждый день</span></li>
+      <li class="reveal"><span class="stack-tool">Python</span><span class="stack-use">скрипты и боты</span><span class="stack-when">каждый день</span></li>
+      <li class="reveal"><span class="stack-tool">TypeScript</span><span class="stack-use">интерфейсы</span><span class="stack-when">каждый день</span></li>
+      <li class="reveal"><span class="stack-tool">React</span><span class="stack-use">интерфейсы</span><span class="stack-when">по задачам</span></li>
+      <li class="reveal"><span class="stack-tool">PostgreSQL</span><span class="stack-use">данные</span><span class="stack-when">по задачам</span></li>
+      <li class="reveal"><span class="stack-tool">Docker</span><span class="stack-use">запуск</span><span class="stack-when">по задачам</span></li>
+      <li class="reveal"><span class="stack-tool">Figma</span><span class="stack-use">макеты</span><span class="stack-when">по задачам</span></li>
+      <li class="reveal"><span class="stack-tool">Rust</span><span class="stack-use">сервер</span><span class="stack-when">пробовал</span></li>
+      <li class="reveal"><span class="stack-tool">Kotlin</span><span class="stack-use">приложения</span><span class="stack-when">пробовал</span></li>
+    </ul>
   </section>
 </main>
+
+<footer class="close" id="contact">
+  <h2 class="reveal">Контакты</h2>
+  <nav class="contact-rows" aria-label="Связаться">
+    <a class="reveal" href="mailto:letunovskiu2011@yandex.ru">letunovskiu2011@<wbr>yandex.ru</a>
+    <a class="reveal" href="https://github.com/SomeoneUnlicensed">github.com/<wbr>SomeoneUnlicensed</a>
+    <a class="reveal" href="https://www.artlebedev.ru/">Студия Лебедева</a>
+  </nav>
+  <div class="close-bottom reveal">
+    <p>© 2026 Владимир Летуновский</p>
+    <a href="#top">Наверх</a>
+  </div>
+  <p class="masthead masthead--foot" aria-hidden="true">Летуновский</p>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Владимир Летуновский","jobTitle":"Разработчик","worksFor":{"@type":"Organization","name":"Студия Артемия Лебедева","url":"https://www.artlebedev.ru/"}}
+</script>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  /* age, counted from the birth date; the date itself is never printed */
+  var dob = { y: 2011, m: 12, d: 2 };
+  var now = new Date();
+  var t = { y: now.getFullYear(), m: now.getMonth() + 1, d: now.getDate() };
+  var y = t.y - dob.y, m = t.m - dob.m, d = t.d - dob.d;
+  if (d < 0) { m--; d += new Date(t.y, t.m - 1, 0).getDate(); }
+  if (m < 0) { y--; m += 12; }
+  if (y < 0) { y = 0; m = 0; d = 0; }
+
+  function plural(n, one, few, many) {
+    var a = Math.abs(n) % 100, b = a % 10;
+    if (a > 10 && a < 20) return many;
+    if (b > 1 && b < 5) return few;
+    if (b === 1) return one;
+    return many;
+  }
+  function yearsText(n) { return n + ' ' + plural(n, 'год', 'года', 'лет'); }
+
+  var yearsEl = document.getElementById('age-years');
+  var unitEl = document.getElementById('age-unit');
+  var exactEl = document.getElementById('age-exact');
+  var nextEl = document.getElementById('age-next');
+  var heroAge = document.getElementById('hero-age');
+
+  if (heroAge) heroAge.textContent = yearsText(y);
+  if (yearsEl && unitEl && exactEl) {
+    yearsEl.textContent = y;
+    unitEl.textContent = plural(y, 'год', 'года', 'лет');
+    var parts = [yearsText(y)];
+    if (m > 0) parts.push(m + ' ' + plural(m, 'месяц', 'месяца', 'месяцев'));
+    if (d > 0) parts.push(d + ' ' + plural(d, 'день', 'дня', 'дней'));
+    exactEl.textContent = parts.join(' ');
+  }
+  if (nextEl) {
+    var nextYear = t.y;
+    var passed = (t.m > 12) || (t.m === 12 && t.d >= 2);
+    if (passed) nextYear++;
+    var nextAge = nextYear - dob.y;
+    var isToday = (t.m === 12 && t.d === 2);
+    nextEl.textContent = isToday ? 'Сегодня ' + yearsText(nextAge) : 'В декабре будет ' + nextAge;
+  }
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = [].slice.call(document.querySelectorAll('.reveal'));
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    reveals.forEach(function(el, i){ el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+  }
+
+  if (!reduce) {
+    var heroName = document.querySelector('.hero .masthead');
+    var footName = document.querySelector('.close .masthead--foot');
+    var shots = [].slice.call(document.querySelectorAll('.shot--main img'));
+    var ticking = false;
+
+    function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+
+    function paint() {
+      var vh = window.innerHeight;
+      var sy = window.scrollY || window.pageYOffset;
+
+      if (heroName) {
+        var p = clamp(sy / (vh * 0.9), 0, 1);
+        heroName.style.transform = 'scale(' + (1 - p * 0.05) + ')';
+      }
+      if (footName) {
+        var r = footName.getBoundingClientRect();
+        var q = clamp((vh - r.top) / (vh * 0.75), 0, 1);
+        footName.style.transform = 'scale(' + (0.955 + q * 0.045) + ')';
+      }
+      shots.forEach(function(img){
+        var box = img.parentElement.getBoundingClientRect();
+        var q = clamp((vh - box.top) / (vh + box.height), 0, 1);
+        img.style.transform = 'translateY(' + ((q - 0.5) * 4.2) + '%)';
+      });
+      ticking = false;
+    }
+    function onScroll(){ if (!ticking) { ticking = true; requestAnimationFrame(paint); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    paint();
+  }
+})();
+</script>
 </body>
 </html>
