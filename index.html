@@ -1,29 +1,29 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Владимир Летуновский, разработчик в Студии Артемия Лебедева</title>
-<meta name="description" content="Владимир Летуновский, разработчик в Студии Артемия Лебедева: сервисы «Фокус» и «Иронов».">
+<title>Vladimir Letunovskiy — developer</title>
+<meta name="description" content="Vladimir Letunovskiy — developer building focused digital tools.">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Владимир Летуновский">
-<meta property="og:description" content="Разработчик в Студии Артемия Лебедева. Делаю «Фокус» и «Иронов».">
+<meta property="og:title" content="Vladimir Letunovskiy">
+<meta property="og:description" content="Developer building focused digital tools.">
 <link rel="canonical" href="https://someoneunlicensed.github.io/letunovskiy/">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="author" content="Владимир Летуновский">
+<meta name="author" content="Vladimir Letunovskiy">
 <meta property="og:url" content="https://someoneunlicensed.github.io/letunovskiy/">
-<meta property="og:site_name" content="Владимир Летуновский">
-<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Vladimir Letunovskiy">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://someoneunlicensed.github.io/letunovskiy/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Летуновский — разработчик в Студии Артемия Лебедева">
-<meta property="profile:first_name" content="Владимир">
-<meta property="profile:last_name" content="Летуновский">
+<meta property="og:image:alt" content="Vladimir Letunovskiy — developer">
+<meta property="profile:first_name" content="Vladimir">
+<meta property="profile:last_name" content="Letunovskiy">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Владимир Летуновский">
-<meta name="twitter:description" content="Разработчик в Студии Артемия Лебедева. Делаю «Фокус» и «Иронов».">
+<meta name="twitter:title" content="Vladimir Letunovskiy">
+<meta name="twitter:description" content="Developer building focused digital tools.">
 <meta name="twitter:image" content="https://someoneunlicensed.github.io/letunovskiy/assets/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
   --paper:#ffffff;
   --ink:#0a0a0a;
   --muted:#6b6b6b;
-  --red:#d92b21;
+  --red:#0a0a0a;
   --pad:clamp(16px,1.5vw,24px);
   --font:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
   --display:"Golos Text",system-ui,sans-serif;
@@ -61,6 +61,13 @@ img{max-width:100%}
   display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto 1fr auto;
   grid-template-areas:"top top" "name name" "foot foot";gap:24px;overflow:clip;
 }
+.hero-name{position:relative}
+.hero-wave{
+  position:absolute;z-index:0;left:50%;top:50%;margin:0;
+  color:#d7d7d7;font:400 clamp(18px,2.4vw,36px)/1.1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.12em;white-space:pre;transform:translate(-50%,-50%) rotate(-7deg);
+  user-select:none;pointer-events:none;
+}
 .hero-top{grid-area:top;display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
 .hero-lead{max-width:34ch}
 .hero-line{font-size:18px;line-height:1.42;text-wrap:pretty}
@@ -78,7 +85,7 @@ img{max-width:100%}
 .masthead{
   width:100%;font-family:var(--display);font-weight:900;font-size:var(--masthead);
   line-height:.84;letter-spacing:-.02em;text-transform:uppercase;text-align:center;
-  transform-origin:50% 50%;will-change:transform;
+  position:relative;z-index:1;transform-origin:50% 50%;will-change:transform;
 }
 .masthead__last{display:block;white-space:nowrap}
 .masthead__first{
@@ -127,7 +134,7 @@ h3{
 
 /* ---------- age ---------- */
 .age{
-  background:var(--red);color:#fff;
+  background:var(--ink);color:#fff;
   min-height:86svh;padding:clamp(72px,8vw,120px) var(--pad) clamp(48px,6vw,88px);
   display:flex;flex-direction:column;justify-content:space-between;gap:40px;overflow:clip;
 }
@@ -138,7 +145,6 @@ h3{
   font-family:var(--display);font-weight:900;
   font-size:clamp(112px,21vw,320px);line-height:.76;letter-spacing:-.065em;
 }
-.age-unit{font-weight:500;font-size:.15em;line-height:1;margin-top:.42em;letter-spacing:0}
 .age-copy{max-width:40ch;padding-bottom:12px}
 .age-exact{font-size:clamp(20px,2.1vw,30px);line-height:1.3;font-variant-numeric:tabular-nums}
 .age-next{font-size:16px;line-height:1.35;margin-top:12px;font-variant-numeric:tabular-nums}
@@ -237,7 +243,6 @@ h3{
   .age{padding:64px 16px 48px}
   .age-grid{grid-template-columns:1fr;gap:28px}
   .age-figure{font-size:38vw}
-  .age-unit{font-size:.16em}
   .age-copy{max-width:none}
   .stack-list li{grid-template-columns:1fr auto;gap:2px 16px;font-size:20px;padding:12px 0}
   .stack-use{grid-column:1;font-size:16px}
@@ -251,34 +256,37 @@ h3{
 </style>
 </head>
 <body>
-<a class="skip" href="#main">К содержанию</a>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="hero" id="top">
   <div class="hero-top">
     <div class="hero-lead">
-      <p class="hero-line">Разработчик в Студии Артемия Лебедева, делаю сервисы «Фокус» и «Иронов».</p>
-      <a class="btn" href="mailto:letunovskiu2011@yandex.ru?subject=%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0">Написать</a>
+      <p class="hero-line">Developer. Building focused digital tools.</p>
+      <a class="btn" href="mailto:letunovskiu2011@yandex.ru?subject=Hello%20from%20your%20site">Get in touch</a>
     </div>
-    <nav class="nav" aria-label="Разделы страницы">
-      <a href="#work">Работа</a>
-      <a href="#stack">Стек</a>
-      <a href="#contact">Контакты</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 
   <div class="hero-name">
     <h1 class="masthead">
-      <span class="masthead__last">Летуновский</span>
-      <span class="masthead__first">Владимир</span>
+      <span class="masthead__last">Letunovskiy</span>
+      <span class="masthead__first">Vladimir</span>
+      <pre class="hero-wave" aria-hidden="true">~~~~~      ~~~~~
+   ~~~~~      ~~~~~
+~~~~~      ~~~~~</pre>
     </h1>
   </div>
 
   <figure class="hero-shot">
-    <img src="assets/fokus-detail.jpg" alt="Слайд, собранный в «Фокусе»: зелёные растения на компьютере и телефоне" width="1000" height="750" fetchpriority="high">
+    <img src="assets/fokus-detail.jpg" alt="A presentation slide with green plants on desktop and mobile" width="1000" height="750" fetchpriority="high">
   </figure>
 
   <div class="hero-foot">
-    <p><span id="hero-age">14 лет</span></p>
+    <p>6 October 2026 — present</p>
     <a href="https://github.com/SomeoneUnlicensed">GitHub</a>
   </div>
 </header>
@@ -286,140 +294,95 @@ h3{
 <main id="main">
   <section class="work" id="work">
     <div class="work-head reveal">
-      <h2>Студия Лебедева</h2>
-      <p>«Фокус» собирает презентации, «Иронов» — логотипы и айдентику по названию.</p>
+      <h2>Selected work</h2>
+      <p>Tools for turning a blank page into something useful.</p>
     </div>
 
     <article class="project project--fokus">
       <div class="project-head reveal">
-        <h3>Фокус</h3>
-        <p class="project-desc">Конструктор презентаций: слайды собираются из текста, а сетку, шрифты и цвета сервис выбирает сам. Презентацию можно показать с телефона, скачать в PDF или PPTX и превратить в сайт.</p>
+        <h3>Fokus</h3>
+        <p class="project-desc">A presentation builder that turns text into a considered deck. Present from your phone, export to PDF or PPTX, or publish it as a website.</p>
         <p class="links">
-          <a href="https://www.artlebedev.ru/fokus/">Страница проекта</a>
-          <a href="https://fokus.am/">Сервис</a>
+          <a href="https://fokus.am/">Open service</a>
         </p>
       </div>
       <div class="project-media">
         <figure class="shot shot--main">
-          <img src="assets/fokus-main.jpg" alt="Главная страница «Фокуса»: заголовок «Создать идеальную презентацию быстро» и кнопка «Начать бесплатно» на чёрном фоне" width="1800" height="1375" loading="lazy">
+          <img src="assets/fokus-main.jpg" alt="Fokus landing page with a black background and a presentation call to action" width="1800" height="1375" loading="lazy">
         </figure>
         <figure class="shot shot--detail">
-          <img src="assets/fokus-detail.jpg" alt="Слайд «Фокуса» с зелёными растениями на компьютере и телефоне" width="1000" height="750" loading="lazy">
+          <img src="assets/fokus-detail.jpg" alt="A Fokus slide with green plants on desktop and mobile" width="1000" height="750" loading="lazy">
         </figure>
       </div>
     </article>
 
     <article class="project project--reverse">
       <div class="project-head reveal">
-        <h3>Иронов</h3>
-        <p class="project-desc">Генератор логотипов и айдентики: по названию проекта собирает знак, палитру, паттерн, визитки и шаблоны для соцсетей.</p>
+        <h3>Ironov</h3>
+        <p class="project-desc">A logo and identity generator. Give it a name and get a mark, palette, pattern, business cards, and social templates.</p>
         <p class="links">
-          <a href="https://www.artlebedev.ru/ironov/">Страница проекта</a>
-          <a href="https://ironov.artlebedev.ru/">Сервис</a>
+          <a href="https://ironov.artlebedev.ru/">Open service</a>
         </p>
       </div>
       <div class="project-media">
         <figure class="shot shot--main">
-          <img src="assets/ironov-main.jpg" alt="Главная страница «Иронова»: «Создать логотип за секунды с технологией Студии Артемия Лебедева» и зелёная кнопка" width="1800" height="1375" loading="lazy">
+          <img src="assets/ironov-main.jpg" alt="Ironov landing page with a logo generation call to action" width="1800" height="1375" loading="lazy">
         </figure>
         <figure class="shot shot--detail shot--detail--ironov">
-          <img src="assets/ironov-detail.jpg" alt="Вывеска RADUGA SCHOOL с логотипом, сгенерированным в «Иронове»" width="1200" height="600" loading="lazy">
+          <img src="assets/ironov-detail.jpg" alt="RADUGA SCHOOL sign with a logo generated by Ironov" width="1200" height="600" loading="lazy">
         </figure>
       </div>
     </article>
   </section>
 
   <section class="age" id="age">
-    <h2 class="reveal">Возраст</h2>
+    <h2 class="reveal">Now</h2>
     <div class="age-grid">
-      <p class="age-figure reveal"><span id="age-years">14</span><span class="age-unit" id="age-unit">лет</span></p>
+      <p class="age-figure reveal"><span>06.10.2026</span></p>
       <div class="age-copy reveal">
-        <p class="age-exact" id="age-exact">14 лет 10 месяцев 29 дней</p>
-        <p class="age-next" id="age-next">В декабре будет 15</p>
+        <p class="age-exact">6 October 2026 — present</p>
+        <p class="age-next">Quietly making useful things.</p>
       </div>
     </div>
   </section>
 
   <section class="stack" id="stack">
-    <h2 class="reveal">Стек</h2>
+    <h2 class="reveal">Stack</h2>
     <ul class="stack-list">
-      <li class="reveal"><span class="stack-tool">Go</span><span class="stack-use">сервер</span><span class="stack-when">каждый день</span></li>
-      <li class="reveal"><span class="stack-tool">Python</span><span class="stack-use">скрипты и боты</span><span class="stack-when">каждый день</span></li>
-      <li class="reveal"><span class="stack-tool">TypeScript</span><span class="stack-use">интерфейсы</span><span class="stack-when">каждый день</span></li>
-      <li class="reveal"><span class="stack-tool">React</span><span class="stack-use">интерфейсы</span><span class="stack-when">по задачам</span></li>
-      <li class="reveal"><span class="stack-tool">PostgreSQL</span><span class="stack-use">данные</span><span class="stack-when">по задачам</span></li>
-      <li class="reveal"><span class="stack-tool">Docker</span><span class="stack-use">запуск</span><span class="stack-when">по задачам</span></li>
-      <li class="reveal"><span class="stack-tool">Figma</span><span class="stack-use">макеты</span><span class="stack-when">по задачам</span></li>
-      <li class="reveal"><span class="stack-tool">Rust</span><span class="stack-use">сервер</span><span class="stack-when">пробовал</span></li>
-      <li class="reveal"><span class="stack-tool">Kotlin</span><span class="stack-use">приложения</span><span class="stack-when">пробовал</span></li>
+      <li class="reveal"><span class="stack-tool">Go</span><span class="stack-use">backend</span><span class="stack-when">daily</span></li>
+      <li class="reveal"><span class="stack-tool">Python</span><span class="stack-use">scripts and bots</span><span class="stack-when">daily</span></li>
+      <li class="reveal"><span class="stack-tool">TypeScript</span><span class="stack-use">interfaces</span><span class="stack-when">daily</span></li>
+      <li class="reveal"><span class="stack-tool">React</span><span class="stack-use">interfaces</span><span class="stack-when">as needed</span></li>
+      <li class="reveal"><span class="stack-tool">PostgreSQL</span><span class="stack-use">data</span><span class="stack-when">as needed</span></li>
+      <li class="reveal"><span class="stack-tool">Docker</span><span class="stack-use">shipping</span><span class="stack-when">as needed</span></li>
+      <li class="reveal"><span class="stack-tool">Figma</span><span class="stack-use">prototypes</span><span class="stack-when">as needed</span></li>
+      <li class="reveal"><span class="stack-tool">Rust</span><span class="stack-use">backend</span><span class="stack-when">exploring</span></li>
+      <li class="reveal"><span class="stack-tool">Kotlin</span><span class="stack-use">apps</span><span class="stack-when">exploring</span></li>
     </ul>
   </section>
 </main>
 
 <footer class="close" id="contact">
-  <h2 class="reveal">Контакты</h2>
-  <nav class="contact-rows" aria-label="Связаться">
+  <h2 class="reveal">Contact</h2>
+  <nav class="contact-rows" aria-label="Contact links">
     <a class="reveal" href="mailto:letunovskiu2011@yandex.ru">letunovskiu2011@<wbr>yandex.ru</a>
     <a class="reveal" href="https://github.com/SomeoneUnlicensed">github.com/<wbr>SomeoneUnlicensed</a>
-    <a class="reveal" href="https://www.artlebedev.ru/">Студия Лебедева</a>
   </nav>
   <div class="close-bottom reveal">
-    <p>© 2026 Владимир Летуновский</p>
-    <a href="#top">Наверх</a>
+    <p>© 2026 Vladimir Letunovskiy</p>
+    <a href="#top">Back to top</a>
   </div>
-  <p class="masthead masthead--foot" aria-hidden="true">Летуновский</p>
+  <p class="masthead masthead--foot" aria-hidden="true">Letunovskiy</p>
 </footer>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://someoneunlicensed.github.io/letunovskiy/#person","name":"Владимир Летуновский","alternateName":"Летуновский Владимир","url":"https://someoneunlicensed.github.io/letunovskiy/","mainEntityOfPage":{"@id":"https://someoneunlicensed.github.io/letunovskiy/"},"jobTitle":"Разработчик","worksFor":{"@type":"Organization","name":"Студия Артемия Лебедева","url":"https://www.artlebedev.ru/"},"sameAs":["https://github.com/SomeoneUnlicensed"],"knowsAbout":["Go","Python","TypeScript","React","PostgreSQL","Docker","Figma"]},{"@type":"WebSite","@id":"https://someoneunlicensed.github.io/letunovskiy/#website","url":"https://someoneunlicensed.github.io/letunovskiy/","name":"Владимир Летуновский","inLanguage":"ru","about":{"@id":"https://someoneunlicensed.github.io/letunovskiy/#person"}}]}
+{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://someoneunlicensed.github.io/letunovskiy/#person","name":"Vladimir Letunovskiy","url":"https://someoneunlicensed.github.io/letunovskiy/","mainEntityOfPage":{"@id":"https://someoneunlicensed.github.io/letunovskiy/"},"jobTitle":"Developer","sameAs":["https://github.com/SomeoneUnlicensed"],"knowsAbout":["Go","Python","TypeScript","React","PostgreSQL","Docker","Figma"]},{"@type":"WebSite","@id":"https://someoneunlicensed.github.io/letunovskiy/#website","url":"https://someoneunlicensed.github.io/letunovskiy/","name":"Vladimir Letunovskiy","inLanguage":"en","about":{"@id":"https://someoneunlicensed.github.io/letunovskiy/#person"}}]}
 </script>
 
 <script>
 (function(){
   var root = document.documentElement;
   root.classList.add('js');
-
-  /* age, counted from the birth date; the date itself is never printed */
-  var dob = { y: 2011, m: 12, d: 2 };
-  var now = new Date();
-  var t = { y: now.getFullYear(), m: now.getMonth() + 1, d: now.getDate() };
-  var y = t.y - dob.y, m = t.m - dob.m, d = t.d - dob.d;
-  if (d < 0) { m--; d += new Date(t.y, t.m - 1, 0).getDate(); }
-  if (m < 0) { y--; m += 12; }
-  if (y < 0) { y = 0; m = 0; d = 0; }
-
-  function plural(n, one, few, many) {
-    var a = Math.abs(n) % 100, b = a % 10;
-    if (a > 10 && a < 20) return many;
-    if (b > 1 && b < 5) return few;
-    if (b === 1) return one;
-    return many;
-  }
-  function yearsText(n) { return n + ' ' + plural(n, 'год', 'года', 'лет'); }
-
-  var yearsEl = document.getElementById('age-years');
-  var unitEl = document.getElementById('age-unit');
-  var exactEl = document.getElementById('age-exact');
-  var nextEl = document.getElementById('age-next');
-  var heroAge = document.getElementById('hero-age');
-
-  if (heroAge) heroAge.textContent = yearsText(y);
-  if (yearsEl && unitEl && exactEl) {
-    yearsEl.textContent = y;
-    unitEl.textContent = plural(y, 'год', 'года', 'лет');
-    var parts = [yearsText(y)];
-    if (m > 0) parts.push(m + ' ' + plural(m, 'месяц', 'месяца', 'месяцев'));
-    if (d > 0) parts.push(d + ' ' + plural(d, 'день', 'дня', 'дней'));
-    exactEl.textContent = parts.join(' ');
-  }
-  if (nextEl) {
-    var nextYear = t.y;
-    var passed = (t.m > 12) || (t.m === 12 && t.d >= 2);
-    if (passed) nextYear++;
-    var nextAge = nextYear - dob.y;
-    var isToday = (t.m === 12 && t.d === 2);
-    nextEl.textContent = isToday ? 'Сегодня ' + yearsText(nextAge) : 'В декабре будет ' + nextAge;
-  }
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var reveals = [].slice.call(document.querySelectorAll('.reveal'));

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800">
+<rect width="1500" height="800" fill="#d8d8d8"/>
+<g font-family="Arial, sans-serif" font-size="16">
+<rect x="28" y="28" width="464" height="744" fill="#fff"/>
+<rect x="518" y="28" width="464" height="744" fill="#111"/>
+<rect x="1008" y="28" width="464" height="744" fill="#e8e4da"/>
+<g fill="#111"><text x="52" y="62" font-family="monospace" font-size="14">01 / QUIET SIGNAL</text><text x="52" y="92">Vladimir Letunovskiy</text><text x="52" y="690" font-family="monospace">6 October 2026 — present</text><text x="52" y="724">Developer. Building focused digital tools.</text></g>
+<g fill="#fff"><text x="542" y="62" font-family="monospace" font-size="14">02 / BLACK FIELD</text><text x="542" y="92">Vladimir Letunovskiy</text><text x="542" y="690" font-family="monospace">6 October 2026 — present</text><text x="542" y="724">Developer. Building focused digital tools.</text></g>
+<g fill="#111" font-family="monospace"><text x="1032" y="62" font-size="14">03 / RAW TERMINAL</text><text x="1032" y="92">&gt; whoami</text><text x="1032" y="690">since: 2026-10-06 / present</text><text x="1032" y="724">&gt; building focused digital tools</text></g>
+<g font-size="110" font-weight="900" letter-spacing="-8"><text x="52" y="570">LETUNOVSKY</text><text x="542" y="570" fill="#fff">LETUNOVSKY</text></g>
+<g font-family="monospace" font-size="24" fill="#aaa"><text x="120" y="390">~~~~~      ~~~~~</text><text x="145" y="420">   ~~~~~      ~~~~~</text><text x="110" y="450">~~~~~      ~~~~~</text></g>
+<g font-family="monospace" font-size="24" fill="#777"><text x="625" y="390">~~~~~~~      ~~~~~~~</text><text x="660" y="420">      ~~~~~      ~~~~~</text><text x="625" y="450">~~~~~~~~      ~~~~~~~~</text></g>
+<g font-family="monospace" font-size="24" fill="#333"><text x="1050" y="390">~ ~ ~ ~ ~ ~ ~ ~ ~ ~</text><text x="1075" y="420">  ~ ~ ~ ~ ~ ~ ~ ~ ~</text><text x="1050" y="450">~ ~ ~ ~ ~ ~ ~ ~ ~ ~</text></g>
+</g>
+</svg>
