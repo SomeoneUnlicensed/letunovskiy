@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Владимир Летуновский — разработчик</title>
-<meta name="description" content="Владимир Летуновский — разработчик в Студии Артемия Лебедева, Москва.">
+<meta name="description" content="Владимир Летуновский — фулстек-разработчик в Студии Артемия Лебедева, Москва.">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="Владимир Летуновский">
-<meta property="og:description" content="Разработчик в Студии Артемия Лебедева, Москва.">
+<meta property="og:description" content="Фулстек-разработчик в Студии Артемия Лебедева, Москва.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://someoneunlicensed.github.io/letunovskiy/">
 <meta property="og:site_name" content="Владимир Летуновский">
@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://someoneunlicensed.github.io/letunovskiy/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='36' font-weight='700' fill='%23fff' text-anchor='middle'%3E%D0%9B%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Владимир Летуновский","jobTitle":"Разработчик","worksFor":{"@type":"Organization","name":"Студия Артемия Лебедева"},"address":{"@type":"PostalAddress","addressLocality":"Москва"},"url":"https://someoneunlicensed.github.io/letunovskiy/","sameAs":["https://github.com/SomeoneUnlicensed","https://kwork.ru/user/letunovskiu2011"]}
+{"@context":"https://schema.org","@type":"Person","name":"Владимир Летуновский","jobTitle":"Фулстек-разработчик","worksFor":{"@type":"Organization","name":"Студия Артемия Лебедева"},"address":{"@type":"PostalAddress","addressLocality":"Москва"},"url":"https://someoneunlicensed.github.io/letunovskiy/","sameAs":["https://github.com/SomeoneUnlicensed","https://kwork.ru/user/letunovskiu2011"]}
 </script>
 <style>
 :root{--paper:#fff;--ink:#111;--muted:#777;--line:#ddd;--pad:clamp(20px,4vw,64px)}
@@ -30,10 +30,11 @@ header{display:flex;justify-content:space-between;align-items:flex-start;border-
 .card{margin:auto 0;max-width:980px;width:100%}
 h1{margin:0;font-size:clamp(56px,13vw,190px);line-height:.82;letter-spacing:-.08em;font-weight:700}
 .first-name{display:block;color:var(--muted);font-size:clamp(20px,3vw,42px);line-height:1;margin:24px 0 0;letter-spacing:-.04em}
-.details{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:clamp(72px,13vw,180px);border-top:1px solid var(--line);padding-top:18px}
+.details{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-flow:dense;gap:24px;margin-top:clamp(72px,13vw,180px);border-top:1px solid var(--line);padding-top:18px}
 .label{color:var(--muted);font:13px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
 .value{font-size:clamp(20px,2.4vw,32px);letter-spacing:-.04em}
 .sub{color:var(--muted);font-size:14px;margin-top:6px}
+.role{font-size:16px;margin-top:10px}
 .stack{grid-column:span 2}
 .project{max-width:980px;width:100%;margin:clamp(48px,8vw,96px) 0 64px;border-top:1px solid var(--line);padding-top:18px}
 .shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
@@ -59,6 +60,7 @@ footer{display:flex;justify-content:space-between;gap:20px;margin-top:80px;color
   <section class="card" aria-live="polite">
     <h1 data-ru="Летуновский" data-en="Letunovskiy">Летуновский</h1>
     <p class="first-name" data-ru="Владимир" data-en="Vladimir">Владимир</p>
+    <p class="sub role" data-ru="фулстек-разработчик" data-en="fullstack developer">фулстек-разработчик</p>
     <div class="details">
       <div>
         <div class="label" data-ru="Сейчас" data-en="Now">Сейчас</div>
@@ -69,9 +71,13 @@ footer{display:flex;justify-content:space-between;gap:20px;margin-top:80px;color
         <div class="label" data-ru="Город" data-en="City">Город</div>
         <div class="value" data-ru="Москва" data-en="Moscow">Москва</div>
       </div>
+      <div>
+        <div class="label" data-ru="Кибербез" data-en="Security">Кибербез</div>
+        <div class="value">Burp Suite · Nmap · Wireshark · nuclei · OSINT</div>
+      </div>
       <div class="stack">
         <div class="label" data-ru="Стек" data-en="Stack">Стек</div>
-        <div class="value">Go · Python · TypeScript · React · Next.js · Node.js · PostgreSQL · Redis · Docker · Kubernetes · Linux · Figma</div>
+        <div class="value">Go · Rust · Python · TypeScript · React · Next.js · Node.js · PostgreSQL · Redis · Docker · Kubernetes · Linux · Figma</div>
       </div>
       <div>
         <div class="label" data-ru="GitHub" data-en="GitHub">GitHub</div>
@@ -112,8 +118,8 @@ footer{display:flex;justify-content:space-between;gap:20px;margin-top:80px;color
       translated.forEach((element) => { element.textContent = element.dataset[lang]; });
       buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
       title.textContent = lang === 'ru'
-        ? 'Владимир Летуновский — разработчик'
-        : 'Vladimir Letunovskiy — developer';
+        ? 'Владимир Летуновский — фулстек-разработчик'
+        : 'Vladimir Letunovskiy — fullstack developer';
     });
   });
 })();
